@@ -3,12 +3,12 @@
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013-2019 */
 
 
-{	/* AArch64_RDFFR_P,      AArch64_INS_RDFFR: rdffr */
+{	/* AArch64_RDFFR_P,       AArch64_INS_RDFFR: rdffr */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_RDFFR_PPz,      AArch64_INS_RDFFR: rdffr */
+{	/* AArch64_RDFFR_PPz,       AArch64_INS_RDFFR: rdffr */
 	0,
 	{ 0 }
 },
@@ -71,6 +71,126 @@
 {	/* AArch64_ABSv8i8, AArch64_INS_ABS: abs */
 	0,
 	{ CS_AC_WRITE, CS_AC_READ, 0 }
+},
+
+{	/* AArch64_ACASAB, AArch64_INS_CASAB: casab */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASAH, AArch64_INS_CASAH: casah */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASALB, AArch64_INS_CASALB: casalb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASALH, AArch64_INS_CASALH: casalh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASALW, AArch64_INS_CASAL: casal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASALX, AArch64_INS_CASAL: casal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASAW, AArch64_INS_CASA: casa */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASAX, AArch64_INS_CASA: casa */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASB, AArch64_INS_CASB: casb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASH, AArch64_INS_CASH: cash */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASLB, AArch64_INS_CASLB: caslb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASLH, AArch64_INS_CASLH: caslh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASLW, AArch64_INS_CASL: casl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASLX, AArch64_INS_CASL: casl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASPALW, AArch64_INS_CASPAL: caspal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASPALX, AArch64_INS_CASPAL: caspal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASPAW, AArch64_INS_CASPA: caspa */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASPAX, AArch64_INS_CASPA: caspa */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASPLW, AArch64_INS_CASPL: caspl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASPLX, AArch64_INS_CASPL: caspl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASPW, AArch64_INS_CASP: casp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASPX, AArch64_INS_CASP: casp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASW, AArch64_INS_CAS: cas */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ACASX, AArch64_INS_CAS: cas */
+	0,
+	{ 0 }
 },
 
 {	/* AArch64_ADCLB_ZZZ_D, AArch64_INS_ADCLB: adclb */
@@ -593,6 +713,2356 @@
 	{ CS_AC_READ | CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
+{	/* AArch64_ALD1Fourv16b, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv16b_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv1d, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv1d_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv2d, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv2d_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv2s, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv2s_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv4h, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv4h_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv4s, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv4s_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv8b, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv8b_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv8h, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Fourv8h_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev16b, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev16b_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev1d, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev1d_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev2d, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev2d_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev2s, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev2s_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev4h, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev4h_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev4s, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev4s_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev8b, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev8b_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev8h, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Onev8h_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv16b, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv16b_POST, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv1d, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv1d_POST, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv2d, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv2d_POST, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv2s, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv2s_POST, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv4h, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv4h_POST, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv4s, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv4s_POST, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv8b, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv8b_POST, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv8h, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Rv8h_POST, AArch64_INS_LD1R: ld1r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev16b, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev16b_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev1d, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev1d_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev2d, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev2d_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev2s, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev2s_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev4h, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev4h_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev4s, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev4s_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev8b, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev8b_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev8h, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Threev8h_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov16b, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov16b_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov1d, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov1d_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov2d, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov2d_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov2s, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov2s_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov4h, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov4h_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov4s, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov4s_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov8b, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov8b_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov8h, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1Twov8h_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1i16, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1i16_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1i32, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1i32_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1i64, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1i64_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1i8, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD1i8_POST, AArch64_INS_LD1: ld1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv16b, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv16b_POST, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv1d, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv1d_POST, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv2d, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv2d_POST, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv2s, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv2s_POST, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv4h, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv4h_POST, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv4s, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv4s_POST, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv8b, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv8b_POST, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv8h, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Rv8h_POST, AArch64_INS_LD2R: ld2r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Twov16b, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Twov16b_POST, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Twov2d, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Twov2d_POST, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Twov2s, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Twov2s_POST, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Twov4h, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Twov4h_POST, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Twov4s, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Twov4s_POST, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Twov8b, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Twov8b_POST, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Twov8h, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2Twov8h_POST, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2i16, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2i16_POST, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2i32, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2i32_POST, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2i64, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2i64_POST, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2i8, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD2i8_POST, AArch64_INS_LD2: ld2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv16b, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv16b_POST, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv1d, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv1d_POST, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv2d, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv2d_POST, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv2s, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv2s_POST, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv4h, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv4h_POST, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv4s, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv4s_POST, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv8b, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv8b_POST, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv8h, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Rv8h_POST, AArch64_INS_LD3R: ld3r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Threev16b, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Threev16b_POST, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Threev2d, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Threev2d_POST, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Threev2s, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Threev2s_POST, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Threev4h, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Threev4h_POST, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Threev4s, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Threev4s_POST, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Threev8b, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Threev8b_POST, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Threev8h, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3Threev8h_POST, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3i16, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3i16_POST, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3i32, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3i32_POST, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3i64, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3i64_POST, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3i8, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD3i8_POST, AArch64_INS_LD3: ld3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Fourv16b, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Fourv16b_POST, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Fourv2d, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Fourv2d_POST, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Fourv2s, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Fourv2s_POST, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Fourv4h, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Fourv4h_POST, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Fourv4s, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Fourv4s_POST, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Fourv8b, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Fourv8b_POST, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Fourv8h, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Fourv8h_POST, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv16b, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv16b_POST, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv1d, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv1d_POST, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv2d, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv2d_POST, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv2s, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv2s_POST, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv4h, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv4h_POST, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv4s, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv4s_POST, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv8b, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv8b_POST, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv8h, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4Rv8h_POST, AArch64_INS_LD4R: ld4r */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4i16, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4i16_POST, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4i32, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4i32_POST, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4i64, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4i64_POST, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4i8, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALD4i8_POST, AArch64_INS_LD4: ld4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDAB, AArch64_INS_LDADDAB: ldaddab */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDAH, AArch64_INS_LDADDAH: ldaddah */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDALB, AArch64_INS_LDADDALB: ldaddalb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDALH, AArch64_INS_LDADDALH: ldaddalh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDALW, AArch64_INS_LDADDAL: ldaddal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDALX, AArch64_INS_LDADDAL: ldaddal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDAW, AArch64_INS_LDADDA: ldadda */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDAX, AArch64_INS_LDADDA: ldadda */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDB, AArch64_INS_LDADDB: ldaddb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDH, AArch64_INS_LDADDH: ldaddh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDLB, AArch64_INS_LDADDLB: ldaddlb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDLH, AArch64_INS_LDADDLH: ldaddlh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDLW, AArch64_INS_LDADDL: ldaddl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDLX, AArch64_INS_LDADDL: ldaddl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDW, AArch64_INS_LDADD: ldadd */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDADDX, AArch64_INS_LDADD: ldadd */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDAPRB, AArch64_INS_LDAPRB: ldaprb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDAPRH, AArch64_INS_LDAPRH: ldaprh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDAPRW, AArch64_INS_LDAPR: ldapr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDAPRX, AArch64_INS_LDAPR: ldapr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDARB, AArch64_INS_LDARB: ldarb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDARH, AArch64_INS_LDARH: ldarh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDARW, AArch64_INS_LDAR: ldar */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDARX, AArch64_INS_LDAR: ldar */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDAXPW, AArch64_INS_LDAXP: ldaxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDAXPX, AArch64_INS_LDAXP: ldaxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDAXRB, AArch64_INS_LDAXRB: ldaxrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDAXRH, AArch64_INS_LDAXRH: ldaxrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDAXRW, AArch64_INS_LDAXR: ldaxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDAXRX, AArch64_INS_LDAXR: ldaxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRAB, AArch64_INS_LDCLRAB: ldclrab */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRAH, AArch64_INS_LDCLRAH: ldclrah */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRALB, AArch64_INS_LDCLRALB: ldclralb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRALH, AArch64_INS_LDCLRALH: ldclralh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRALW, AArch64_INS_LDCLRAL: ldclral */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRALX, AArch64_INS_LDCLRAL: ldclral */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRAW, AArch64_INS_LDCLRA: ldclra */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRAX, AArch64_INS_LDCLRA: ldclra */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRB, AArch64_INS_LDCLRB: ldclrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRH, AArch64_INS_LDCLRH: ldclrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRLB, AArch64_INS_LDCLRLB: ldclrlb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRLH, AArch64_INS_LDCLRLH: ldclrlh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRLW, AArch64_INS_LDCLRL: ldclrl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRLX, AArch64_INS_LDCLRL: ldclrl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRW, AArch64_INS_LDCLR: ldclr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDCLRX, AArch64_INS_LDCLR: ldclr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORAB, AArch64_INS_LDEORAB: ldeorab */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORAH, AArch64_INS_LDEORAH: ldeorah */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORALB, AArch64_INS_LDEORALB: ldeoralb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORALH, AArch64_INS_LDEORALH: ldeoralh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORALW, AArch64_INS_LDEORAL: ldeoral */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORALX, AArch64_INS_LDEORAL: ldeoral */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORAW, AArch64_INS_LDEORA: ldeora */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORAX, AArch64_INS_LDEORA: ldeora */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORB, AArch64_INS_LDEORB: ldeorb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORH, AArch64_INS_LDEORH: ldeorh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORLB, AArch64_INS_LDEORLB: ldeorlb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORLH, AArch64_INS_LDEORLH: ldeorlh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORLW, AArch64_INS_LDEORL: ldeorl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORLX, AArch64_INS_LDEORL: ldeorl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORW, AArch64_INS_LDEOR: ldeor */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDEORX, AArch64_INS_LDEOR: ldeor */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDLARB, AArch64_INS_LDLARB: ldlarb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDLARH, AArch64_INS_LDLARH: ldlarh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDLARW, AArch64_INS_LDLAR: ldlar */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDLARX, AArch64_INS_LDLAR: ldlar */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDNPDi, AArch64_INS_LDNP: ldnp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDNPQi, AArch64_INS_LDNP: ldnp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDNPSi, AArch64_INS_LDNP: ldnp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDNPWi, AArch64_INS_LDNP: ldnp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDNPXi, AArch64_INS_LDNP: ldnp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPDi, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPDpost, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPDpre, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPQi, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPQpost, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPQpre, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPSWi, AArch64_INS_LDPSW: ldpsw */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPSWpost, AArch64_INS_LDPSW: ldpsw */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPSWpre, AArch64_INS_LDPSW: ldpsw */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPSi, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPSpost, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPSpre, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPWi, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPWpost, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPWpre, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPXi, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPXpost, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDPXpre, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRBBpost, AArch64_INS_LDRB: ldrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRBBpre, AArch64_INS_LDRB: ldrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRBBroW, AArch64_INS_LDRB: ldrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRBBroX, AArch64_INS_LDRB: ldrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRBBui, AArch64_INS_LDRB: ldrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRBpost, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRBpre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRBroW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRBroX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRBui, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRDpost, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRDpre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRDroW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRDroX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRDui, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRHHpost, AArch64_INS_LDRH: ldrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRHHpre, AArch64_INS_LDRH: ldrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRHHroW, AArch64_INS_LDRH: ldrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRHHroX, AArch64_INS_LDRH: ldrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRHHui, AArch64_INS_LDRH: ldrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRHpost, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRHpre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRHroW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRHroX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRHui, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRQpost, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRQpre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRQroW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRQroX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRQui, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSBWpost, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSBWpre, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSBWroW, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSBWroX, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSBWui, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSBXpost, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSBXpre, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSBXroW, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSBXroX, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSBXui, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSHWpost, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSHWpre, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSHWroW, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSHWroX, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSHWui, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSHXpost, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSHXpre, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSHXroW, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSHXroX, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSHXui, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSWpost, AArch64_INS_LDRSW: ldrsw */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSWpre, AArch64_INS_LDRSW: ldrsw */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSWroW, AArch64_INS_LDRSW: ldrsw */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSWroX, AArch64_INS_LDRSW: ldrsw */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSWui, AArch64_INS_LDRSW: ldrsw */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSpost, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSpre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSroW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSroX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRSui, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRWpost, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRWpre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRWroW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRWroX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRWui, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRXpost, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRXpre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRXroW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRXroX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDRXui, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETAB, AArch64_INS_LDSETAB: ldsetab */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETAH, AArch64_INS_LDSETAH: ldsetah */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETALB, AArch64_INS_LDSETALB: ldsetalb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETALH, AArch64_INS_LDSETALH: ldsetalh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETALW, AArch64_INS_LDSETAL: ldsetal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETALX, AArch64_INS_LDSETAL: ldsetal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETAW, AArch64_INS_LDSETA: ldseta */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETAX, AArch64_INS_LDSETA: ldseta */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETB, AArch64_INS_LDSETB: ldsetb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETH, AArch64_INS_LDSETH: ldseth */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETLB, AArch64_INS_LDSETLB: ldsetlb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETLH, AArch64_INS_LDSETLH: ldsetlh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETLW, AArch64_INS_LDSETL: ldsetl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETLX, AArch64_INS_LDSETL: ldsetl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETW, AArch64_INS_LDSET: ldset */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSETX, AArch64_INS_LDSET: ldset */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXAB, AArch64_INS_LDSMAXAB: ldsmaxab */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXAH, AArch64_INS_LDSMAXAH: ldsmaxah */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXALB, AArch64_INS_LDSMAXALB: ldsmaxalb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXALH, AArch64_INS_LDSMAXALH: ldsmaxalh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXALW, AArch64_INS_LDSMAXAL: ldsmaxal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXALX, AArch64_INS_LDSMAXAL: ldsmaxal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXAW, AArch64_INS_LDSMAXA: ldsmaxa */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXAX, AArch64_INS_LDSMAXA: ldsmaxa */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXB, AArch64_INS_LDSMAXB: ldsmaxb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXH, AArch64_INS_LDSMAXH: ldsmaxh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXLB, AArch64_INS_LDSMAXLB: ldsmaxlb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXLH, AArch64_INS_LDSMAXLH: ldsmaxlh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXLW, AArch64_INS_LDSMAXL: ldsmaxl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXLX, AArch64_INS_LDSMAXL: ldsmaxl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXW, AArch64_INS_LDSMAX: ldsmax */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMAXX, AArch64_INS_LDSMAX: ldsmax */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINAB, AArch64_INS_LDSMINAB: ldsminab */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINAH, AArch64_INS_LDSMINAH: ldsminah */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINALB, AArch64_INS_LDSMINALB: ldsminalb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINALH, AArch64_INS_LDSMINALH: ldsminalh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINALW, AArch64_INS_LDSMINAL: ldsminal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINALX, AArch64_INS_LDSMINAL: ldsminal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINAW, AArch64_INS_LDSMINA: ldsmina */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINAX, AArch64_INS_LDSMINA: ldsmina */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINB, AArch64_INS_LDSMINB: ldsminb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINH, AArch64_INS_LDSMINH: ldsminh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINLB, AArch64_INS_LDSMINLB: ldsminlb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINLH, AArch64_INS_LDSMINLH: ldsminlh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINLW, AArch64_INS_LDSMINL: ldsminl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINLX, AArch64_INS_LDSMINL: ldsminl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINW, AArch64_INS_LDSMIN: ldsmin */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDSMINX, AArch64_INS_LDSMIN: ldsmin */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDTRBi, AArch64_INS_LDTRB: ldtrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDTRHi, AArch64_INS_LDTRH: ldtrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDTRSBWi, AArch64_INS_LDTRSB: ldtrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDTRSBXi, AArch64_INS_LDTRSB: ldtrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDTRSHWi, AArch64_INS_LDTRSH: ldtrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDTRSHXi, AArch64_INS_LDTRSH: ldtrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDTRSWi, AArch64_INS_LDTRSW: ldtrsw */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDTRWi, AArch64_INS_LDTR: ldtr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDTRXi, AArch64_INS_LDTR: ldtr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXAB, AArch64_INS_LDUMAXAB: ldumaxab */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXAH, AArch64_INS_LDUMAXAH: ldumaxah */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXALB, AArch64_INS_LDUMAXALB: ldumaxalb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXALH, AArch64_INS_LDUMAXALH: ldumaxalh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXALW, AArch64_INS_LDUMAXAL: ldumaxal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXALX, AArch64_INS_LDUMAXAL: ldumaxal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXAW, AArch64_INS_LDUMAXA: ldumaxa */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXAX, AArch64_INS_LDUMAXA: ldumaxa */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXB, AArch64_INS_LDUMAXB: ldumaxb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXH, AArch64_INS_LDUMAXH: ldumaxh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXLB, AArch64_INS_LDUMAXLB: ldumaxlb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXLH, AArch64_INS_LDUMAXLH: ldumaxlh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXLW, AArch64_INS_LDUMAXL: ldumaxl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXLX, AArch64_INS_LDUMAXL: ldumaxl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXW, AArch64_INS_LDUMAX: ldumax */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMAXX, AArch64_INS_LDUMAX: ldumax */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINAB, AArch64_INS_LDUMINAB: lduminab */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINAH, AArch64_INS_LDUMINAH: lduminah */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINALB, AArch64_INS_LDUMINALB: lduminalb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINALH, AArch64_INS_LDUMINALH: lduminalh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINALW, AArch64_INS_LDUMINAL: lduminal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINALX, AArch64_INS_LDUMINAL: lduminal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINAW, AArch64_INS_LDUMINA: ldumina */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINAX, AArch64_INS_LDUMINA: ldumina */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINB, AArch64_INS_LDUMINB: lduminb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINH, AArch64_INS_LDUMINH: lduminh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINLB, AArch64_INS_LDUMINLB: lduminlb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINLH, AArch64_INS_LDUMINLH: lduminlh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINLW, AArch64_INS_LDUMINL: lduminl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINLX, AArch64_INS_LDUMINL: lduminl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINW, AArch64_INS_LDUMIN: ldumin */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDUMINX, AArch64_INS_LDUMIN: ldumin */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDURBBi, AArch64_INS_LDRB: ldrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDURBi, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDURDi, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDURHHi, AArch64_INS_LDRH: ldrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDURHi, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDURQi, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDURSBWi, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDURSBXi, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDURSHWi, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDURSHXi, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDURSWi, AArch64_INS_LDRSW: ldrsw */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDURSi, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDURWi, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDURXi, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDXPW, AArch64_INS_LDXP: ldxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDXPX, AArch64_INS_LDXP: ldxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDXRB, AArch64_INS_LDXRB: ldxrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDXRH, AArch64_INS_LDXRH: ldxrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDXRW, AArch64_INS_LDXR: ldxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ALDXRX, AArch64_INS_LDXR: ldxr */
+	0,
+	{ 0 }
+},
+
 {	/* AArch64_ANDSWri, AArch64_INS_ANDS: ands */
 	0,
 	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
@@ -701,6 +3171,26 @@
 {	/* AArch64_ANDv8i8, AArch64_INS_AND: and */
 	0,
 	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
+},
+
+{	/* AArch64_APRFMroW, AArch64_INS_PRFM: prfm */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_APRFMroX, AArch64_INS_PRFM: prfm */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_APRFMui, AArch64_INS_PRFM: prfm */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_APRFUMi, AArch64_INS_PRFUM: prfum */
+	0,
+	{ 0 }
 },
 
 {	/* AArch64_ASRD_ZPmI_B, AArch64_INS_ASRD: asrd */
@@ -843,6 +3333,1266 @@
 	{ 0 }
 },
 
+{	/* AArch64_AST1Fourv16b, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv16b_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv1d, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv1d_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv2d, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv2d_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv2s, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv2s_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv4h, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv4h_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv4s, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv4s_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv8b, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv8b_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv8h, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Fourv8h_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev16b, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev16b_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev1d, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev1d_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev2d, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev2d_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev2s, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev2s_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev4h, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev4h_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev4s, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev4s_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev8b, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev8b_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev8h, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Onev8h_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev16b, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev16b_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev1d, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev1d_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev2d, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev2d_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev2s, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev2s_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev4h, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev4h_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev4s, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev4s_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev8b, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev8b_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev8h, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Threev8h_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov16b, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov16b_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov1d, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov1d_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov2d, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov2d_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov2s, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov2s_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov4h, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov4h_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov4s, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov4s_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov8b, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov8b_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov8h, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1Twov8h_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1i16, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1i16_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1i32, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1i32_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1i64, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1i64_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1i8, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST1i8_POST, AArch64_INS_ST1: st1 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2Twov16b, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2Twov16b_POST, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2Twov2d, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2Twov2d_POST, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2Twov2s, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2Twov2s_POST, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2Twov4h, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2Twov4h_POST, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2Twov4s, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2Twov4s_POST, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2Twov8b, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2Twov8b_POST, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2Twov8h, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2Twov8h_POST, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2i16, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2i16_POST, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2i32, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2i32_POST, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2i64, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2i64_POST, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2i8, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST2i8_POST, AArch64_INS_ST2: st2 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3Threev16b, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3Threev16b_POST, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3Threev2d, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3Threev2d_POST, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3Threev2s, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3Threev2s_POST, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3Threev4h, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3Threev4h_POST, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3Threev4s, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3Threev4s_POST, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3Threev8b, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3Threev8b_POST, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3Threev8h, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3Threev8h_POST, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3i16, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3i16_POST, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3i32, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3i32_POST, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3i64, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3i64_POST, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3i8, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST3i8_POST, AArch64_INS_ST3: st3 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4Fourv16b, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4Fourv16b_POST, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4Fourv2d, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4Fourv2d_POST, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4Fourv2s, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4Fourv2s_POST, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4Fourv4h, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4Fourv4h_POST, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4Fourv4s, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4Fourv4s_POST, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4Fourv8b, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4Fourv8b_POST, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4Fourv8h, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4Fourv8h_POST, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4i16, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4i16_POST, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4i32, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4i32_POST, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4i64, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4i64_POST, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4i8, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AST4i8_POST, AArch64_INS_ST4: st4 */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTLLRB, AArch64_INS_STLLRB: stllrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTLLRH, AArch64_INS_STLLRH: stllrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTLLRW, AArch64_INS_STLLR: stllr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTLLRX, AArch64_INS_STLLR: stllr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTLRB, AArch64_INS_STLRB: stlrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTLRH, AArch64_INS_STLRH: stlrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTLRW, AArch64_INS_STLR: stlr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTLRX, AArch64_INS_STLR: stlr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTLXPW, AArch64_INS_STLXP: stlxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTLXPX, AArch64_INS_STLXP: stlxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTLXRB, AArch64_INS_STLXRB: stlxrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTLXRH, AArch64_INS_STLXRH: stlxrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTLXRW, AArch64_INS_STLXR: stlxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTLXRX, AArch64_INS_STLXR: stlxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTNPDi, AArch64_INS_STNP: stnp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTNPQi, AArch64_INS_STNP: stnp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTNPSi, AArch64_INS_STNP: stnp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTNPWi, AArch64_INS_STNP: stnp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTNPXi, AArch64_INS_STNP: stnp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPDi, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPDpost, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPDpre, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPQi, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPQpost, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPQpre, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPSi, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPSpost, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPSpre, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPWi, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPWpost, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPWpre, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPXi, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPXpost, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTPXpre, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRBBpost, AArch64_INS_STRB: strb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRBBpre, AArch64_INS_STRB: strb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRBBroW, AArch64_INS_STRB: strb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRBBroX, AArch64_INS_STRB: strb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRBBui, AArch64_INS_STRB: strb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRBpost, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRBpre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRBroW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRBroX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRBui, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRDpost, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRDpre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRDroW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRDroX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRDui, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRHHpost, AArch64_INS_STRH: strh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRHHpre, AArch64_INS_STRH: strh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRHHroW, AArch64_INS_STRH: strh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRHHroX, AArch64_INS_STRH: strh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRHHui, AArch64_INS_STRH: strh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRHpost, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRHpre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRHroW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRHroX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRHui, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRQpost, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRQpre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRQroW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRQroX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRQui, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRSpost, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRSpre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRSroW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRSroX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRSui, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRWpost, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRWpre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRWroW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRWroX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRWui, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRXpost, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRXpre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRXroW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRXroX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTRXui, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTTRBi, AArch64_INS_STTRB: sttrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTTRHi, AArch64_INS_STTRH: sttrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTTRWi, AArch64_INS_STTR: sttr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTTRXi, AArch64_INS_STTR: sttr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTURBBi, AArch64_INS_STRB: strb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTURBi, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTURDi, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTURHHi, AArch64_INS_STRH: strh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTURHi, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTURQi, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTURSi, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTURWi, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTURXi, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTXPW, AArch64_INS_STXP: stxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTXPX, AArch64_INS_STXP: stxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTXRB, AArch64_INS_STXRB: stxrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTXRH, AArch64_INS_STXRH: stxrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTXRW, AArch64_INS_STXR: stxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASTXRX, AArch64_INS_STXR: stxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPAB, AArch64_INS_SWPAB: swpab */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPAH, AArch64_INS_SWPAH: swpah */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPALB, AArch64_INS_SWPALB: swpalb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPALH, AArch64_INS_SWPALH: swpalh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPALW, AArch64_INS_SWPAL: swpal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPALX, AArch64_INS_SWPAL: swpal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPAW, AArch64_INS_SWPA: swpa */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPAX, AArch64_INS_SWPA: swpa */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPB, AArch64_INS_SWPB: swpb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPH, AArch64_INS_SWPH: swph */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPLB, AArch64_INS_SWPLB: swplb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPLH, AArch64_INS_SWPLH: swplh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPLW, AArch64_INS_SWPL: swpl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPLX, AArch64_INS_SWPL: swpl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPW, AArch64_INS_SWP: swp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_ASWPX, AArch64_INS_SWP: swp */
+	0,
+	{ 0 }
+},
+
 {	/* AArch64_AUTDA, AArch64_INS_AUTDA: autda */
 	0,
 	{ CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
@@ -858,9 +4608,9 @@
 	{ CS_AC_WRITE | CS_AC_READ, 0 }
 },
 
-{	/* AArch64_AUTDZB | CS_AC_READ, AArch64_INS_AUTDZB: autdzb */
+{	/* AArch64_AUTDZB, AArch64_INS_AUTDZB: autdzb */
 	0,
-	{ CS_AC_WRITE | CS_AC_READ, 0 }
+	{ 0 }
 },
 
 {	/* AArch64_AUTIA, AArch64_INS_AUTIA: autia */
@@ -914,6 +4664,381 @@
 },
 
 {	/* AArch64_AXFLAG, AArch64_INS_AXFLAG: axflag */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltCapLoadAcq, AArch64_INS_LDAR: ldar */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltCapStoreRel, AArch64_INS_STLR: stlr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadByteAcq, AArch64_INS_LDARB: ldarb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadByteImmPre, AArch64_INS_LDRB: ldrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadByteImmUnscaled, AArch64_INS_LDRB: ldrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadByteRegExtW, AArch64_INS_LDRB: ldrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadByteRegExtX, AArch64_INS_LDRB: ldrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadCapImmPre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadCapRegExtW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadCapRegExtX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadCapabilityImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadDFPRegExtW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadDFPRegExtX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadDWordImmPre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadDWordImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadDWordRegExtW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadDWordRegExtX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadFPByteImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadFPDoubleImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadFPHalfImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadFPQuadImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadFPSingleImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadHalfImmUnscaled, AArch64_INS_LDRH: ldrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadHalfwordRegExtW, AArch64_INS_LDRH: ldrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadHalfwordRegExtX, AArch64_INS_LDRH: ldrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSFPRegExtW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSFPRegExtX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSWordRegExtW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSWordRegExtX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSignedByteDRegExtW, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSignedByteDRegExtX, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSignedByteSRegExtW, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSignedByteSRegExtX, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSignedByteToDWordImmUnscaled, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSignedByteToWordImmUnscaled, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSignedHalfToDWordImmUnscaled, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSignedHalfToWordImmUnscaled, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSignedHalfwordDRegExtW, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSignedHalfwordDRegExtX, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSignedHalfwordSRegExtW, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSignedHalfwordSRegExtX, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadSignedWordToDWordImmUnscaled, AArch64_INS_LDRSW: ldrsw */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadWordAcq, AArch64_INS_LDAR: ldar */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadWordImmPre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltLoadWordImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreByteImmPre, AArch64_INS_STRB: strb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreByteImmUnscaled, AArch64_INS_STRB: strb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreByteRegExtW, AArch64_INS_STRB: strb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreByteRegExtX, AArch64_INS_STRB: strb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreByteRel, AArch64_INS_STLRB: stlrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreCapImmPre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreCapRegExtW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreCapRegExtX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreCapabilityImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreDFPRegExtW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreDFPRegExtX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreDWordImmPre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreDWordImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreDWordRegExtW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreDWordRegExtX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreFPByteImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreFPDoubleImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreFPHalfImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreFPQuadImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreFPSingleImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreHalfImmUnscaled, AArch64_INS_STRH: strh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreHalfwordRegExtW, AArch64_INS_STRH: strh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreHalfwordRegExtX, AArch64_INS_STRH: strh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreSFPRegExtW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreSFPRegExtX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreSWordRegExtW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreSWordRegExtX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreWordImmPre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreWordImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_AltStoreWordRel, AArch64_INS_STLR: stlr */
 	0,
 	{ 0 }
 },
@@ -3544,6 +7669,621 @@
 },
 
 {	/* AArch64_CTERMNE_XX, AArch64_INS_CTERMNE: ctermne */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapAddImm, AArch64_INS_ADD: add */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapAddRegW, AArch64_INS_ADD: add */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapAddRegX, AArch64_INS_ADD: add */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapAlignDown, AArch64_INS_ALIGND: alignd */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapAlignUp, AArch64_INS_ALIGNU: alignu */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapBicImm, AArch64_INS_BICFLGS: bicflgs */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapBicReg, AArch64_INS_BICFLGS: bicflgs */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapBranch, AArch64_INS_BR: br */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapBranchDirect, AArch64_INS_BRS: brs */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapBranchExchange4, AArch64_INS_BX: bx */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapBranchLink, AArch64_INS_BLR: blr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapBranchLinkDirect, AArch64_INS_BLRS: blrs */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapBranchLinkRestricted, AArch64_INS_BLRR: blrr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapBranchLinkSealed, AArch64_INS_BLRS: blrs */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapBranchRestricted, AArch64_INS_BRR: brr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapBranchSealed, AArch64_INS_BRS: brs */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapBuildCap, AArch64_INS_BUILD: build */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapCheckEquals, AArch64_INS_CHKEQ: chkeq */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapCheckSealed, AArch64_INS_CHKSLD: chksld */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapCheckSubset, AArch64_INS_CHKSS: chkss */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapCheckSubsetUnseal, AArch64_INS_CHKSSU: chkssu */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapCheckTagged, AArch64_INS_CHKTGD: chktgd */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapClearPerm, AArch64_INS_CLRPERM: clrperm */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapClearPermImm, AArch64_INS_CLRPERM: clrperm */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapClearTag, AArch64_INS_CLRTAG: clrtag */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapCompareSwap, AArch64_INS_CAS: cas */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapCompareSwapAcq, AArch64_INS_CASA: casa */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapCompareSwapAcqRel, AArch64_INS_CASAL: casal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapCompareSwapRel, AArch64_INS_CASL: casl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapCondSel, AArch64_INS_CSEL: csel */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapConvert64ToCapDDC, AArch64_INS_CVTD: cvtd */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapConvert64ToCapDDCNullCheck, AArch64_INS_CVTDZ: cvtdz */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapConvert64ToCapPCC, AArch64_INS_CVTP: cvtp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapConvert64ToCapPCCNullCheck, AArch64_INS_CVTPZ: cvtpz */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapConvert64toCap, AArch64_INS_CVT: cvt */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapConvert64toCapNullCheck, AArch64_INS_CVTZ: cvtz */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapConvertCapTo64, AArch64_INS_CVT: cvt */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapConvertCapTo64DDC, AArch64_INS_CVTD: cvtd */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapConvertCapTo64PCC, AArch64_INS_CVTP: cvtp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapCopy, AArch64_INS_CPY: cpy */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapCopyFromHigh, AArch64_INS_CFHI: cfhi */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapCopyToHigh, AArch64_INS_CTHI: cthi */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapEorImm, AArch64_INS_EORFLGS: eorflgs */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapEorReg, AArch64_INS_EORFLGS: eorflgs */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapGetBase, AArch64_INS_GCBASE: gcbase */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapGetFlags, AArch64_INS_GCFLGS: gcflgs */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapGetLen, AArch64_INS_GCLEN: gclen */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapGetLimit, AArch64_INS_GCLIM: gclim */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapGetOffset, AArch64_INS_GCOFF: gcoff */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapGetPerm, AArch64_INS_GCPERM: gcperm */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapGetSeal, AArch64_INS_GCSEAL: gcseal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapGetSys, AArch64_INS_MRS: mrs */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapGetTag, AArch64_INS_GCTAG: gctag */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapGetType, AArch64_INS_GCTYPE: gctype */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapGetValue, AArch64_INS_GCVALUE: gcvalue */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadAcq, AArch64_INS_LDAR: ldar */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadAcqPR, AArch64_INS_LDAPR: ldapr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadBranchIndirect, AArch64_INS_BR: br */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadBranchLinkIndirect, AArch64_INS_BLR: blr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadEx, AArch64_INS_LDXR: ldxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadExAcq, AArch64_INS_LDAXR: ldaxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadExPair, AArch64_INS_LDXP: ldxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadExPairAcq, AArch64_INS_LDAXP: ldaxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadImmPost, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadImmPre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadImmPreW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadLiteral, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadPairBranch, AArch64_INS_LDPBR: ldpbr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadPairBranchLink, AArch64_INS_LDPBLR: ldpblr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadPairImmPost, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadPairImmPre, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadPairImmPreW, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadPairNonTemporal, AArch64_INS_LDNP: ldnp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadRegExtW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadRegExtX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadTags, AArch64_INS_LDCT: ldct */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadUnpriv, AArch64_INS_LDTR: ldtr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapLoadUnscaledImm, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapOrImm, AArch64_INS_ORRFLGS: orrflgs */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapOrrReg, AArch64_INS_ORRFLGS: orrflgs */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapReturn, AArch64_INS_RET: ret */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapReturnDirect, AArch64_INS_RETS: rets */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapReturnRestricted, AArch64_INS_RETR: retr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapReturnSealed, AArch64_INS_RETS: rets */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapRoundRepresentableLength, AArch64_INS_RRLEN: rrlen */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapRoundRepresentableMask, AArch64_INS_RRMASK: rrmask */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSeal, AArch64_INS_SEAL: seal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSealCond, AArch64_INS_CSEAL: cseal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSealImm, AArch64_INS_SEAL: seal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSetBounds, AArch64_INS_SCBNDS: scbnds */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSetBoundsExact, AArch64_INS_SCBNDSE: scbndse */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSetBoundsImm, AArch64_INS_SCBNDS: scbnds */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSetFlags, AArch64_INS_SCFLGS: scflgs */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSetOffset, AArch64_INS_SCOFF: scoff */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSetSys, AArch64_INS_MSR: msr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSetTagPriv, AArch64_INS_SCTAG: sctag */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSetValue, AArch64_INS_SCVALUE: scvalue */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSetValueFromType, AArch64_INS_CPYTYPE: cpytype */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSetValueFromValue, AArch64_INS_CPYVALUE: cpyvalue */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStoreEx, AArch64_INS_STXR: stxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStoreExPair, AArch64_INS_STXP: stxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStoreExPairRel, AArch64_INS_STLXP: stlxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStoreExRel, AArch64_INS_STLXR: stlxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStoreImmPost, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStoreImmPre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStoreImmPreW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStorePairImmPost, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStorePairImmPre, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStorePairImmPreW, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStorePairNonTemporal, AArch64_INS_STNP: stnp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStoreRegExtW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStoreRegExtX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStoreRel, AArch64_INS_STLR: stlr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStoreTagsPriv, AArch64_INS_STCT: stct */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStoreUnpriv, AArch64_INS_STTR: sttr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapStoreUnscaledImm, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSubImm, AArch64_INS_SUB: sub */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSubSetFlags, AArch64_INS_CMP: cmp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSwap, AArch64_INS_SWP: swp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSwapAcq, AArch64_INS_SWPA: swpa */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSwapAcqRel, AArch64_INS_SWPAL: swpal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapSwapRel, AArch64_INS_SWPL: swpl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_CapUnseal, AArch64_INS_UNSEAL: unseal */
 	0,
 	{ 0 }
 },
@@ -14231,6 +18971,606 @@
 {	/* AArch64_PACIZB, AArch64_INS_PACIZB: pacizb */
 	0,
 	{ CS_AC_WRITE | CS_AC_READ, 0 }
+},
+
+{	/* AArch64_PADRDP, AArch64_INS_ADRDP: adrdp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PADRP, AArch64_INS_ADRP: adrp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltCapLoadAcq, AArch64_INS_LDAR: ldar */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltCapStoreRel, AArch64_INS_STLR: stlr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadByteAcq, AArch64_INS_LDARB: ldarb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadByteImmPre, AArch64_INS_LDRB: ldrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadByteImmUnscaled, AArch64_INS_LDRB: ldrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadByteRegExtW, AArch64_INS_LDRB: ldrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadByteRegExtX, AArch64_INS_LDRB: ldrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadCapImmPre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadCapRegExtW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadCapRegExtX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadCapabilityImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadDFPRegExtW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadDFPRegExtX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadDWordImmPre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadDWordImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadDWordRegExtW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadDWordRegExtX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadFPByteImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadFPDoubleImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadFPHalfImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadFPQuadImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadFPSingleImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadHalfImmUnscaled, AArch64_INS_LDRH: ldrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadHalfwordRegExtW, AArch64_INS_LDRH: ldrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadHalfwordRegExtX, AArch64_INS_LDRH: ldrh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSFPRegExtW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSFPRegExtX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSWordRegExtW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSWordRegExtX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSignedByteDRegExtW, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSignedByteDRegExtX, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSignedByteSRegExtW, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSignedByteSRegExtX, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSignedByteToDWordImmUnscaled, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSignedByteToWordImmUnscaled, AArch64_INS_LDRSB: ldrsb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSignedHalfToDWordImmUnscaled, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSignedHalfToWordImmUnscaled, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSignedHalfwordDRegExtW, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSignedHalfwordDRegExtX, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSignedHalfwordSRegExtW, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSignedHalfwordSRegExtX, AArch64_INS_LDRSH: ldrsh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadSignedWordToDWordImmUnscaled, AArch64_INS_LDRSW: ldrsw */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadWordAcq, AArch64_INS_LDAR: ldar */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadWordImmPre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltLoadWordImmUnscaled, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreByteImmPre, AArch64_INS_STRB: strb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreByteImmUnscaled, AArch64_INS_STRB: strb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreByteRegExtW, AArch64_INS_STRB: strb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreByteRegExtX, AArch64_INS_STRB: strb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreByteRel, AArch64_INS_STLRB: stlrb */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreCapImmPre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreCapRegExtW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreCapRegExtX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreCapabilityImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreDFPRegExtW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreDFPRegExtX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreDWordImmPre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreDWordImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreDWordRegExtW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreDWordRegExtX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreFPByteImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreFPDoubleImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreFPHalfImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreFPQuadImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreFPSingleImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreHalfImmUnscaled, AArch64_INS_STRH: strh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreHalfwordRegExtW, AArch64_INS_STRH: strh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreHalfwordRegExtX, AArch64_INS_STRH: strh */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreSFPRegExtW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreSFPRegExtX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreSWordRegExtW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreSWordRegExtX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreWordImmPre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreWordImmUnscaled, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PAltStoreWordRel, AArch64_INS_STLR: stlr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapCompareSwap, AArch64_INS_CAS: cas */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapCompareSwapAcq, AArch64_INS_CASA: casa */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapCompareSwapAcqRel, AArch64_INS_CASAL: casal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapCompareSwapRel, AArch64_INS_CASL: casl */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadAcq, AArch64_INS_LDAR: ldar */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadAcqPR, AArch64_INS_LDAPR: ldapr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadEx, AArch64_INS_LDXR: ldxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadExAcq, AArch64_INS_LDAXR: ldaxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadExPair, AArch64_INS_LDXP: ldxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadExPairAcq, AArch64_INS_LDAXP: ldaxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadImmPost, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadImmPre, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadImmPreW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadPairImmPost, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadPairImmPre, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadPairImmPreW, AArch64_INS_LDP: ldp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadPairNonTemporal, AArch64_INS_LDNP: ldnp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadRegExtW, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadRegExtX, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadTags, AArch64_INS_LDCT: ldct */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadUnpriv, AArch64_INS_LDTR: ldtr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapLoadUnscaledImm, AArch64_INS_LDR: ldr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStoreEx, AArch64_INS_STXR: stxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStoreExPair, AArch64_INS_STXP: stxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStoreExPairRel, AArch64_INS_STLXP: stlxp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStoreExRel, AArch64_INS_STLXR: stlxr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStoreImmPost, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStoreImmPre, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStoreImmPreW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStorePairImmPost, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStorePairImmPre, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStorePairImmPreW, AArch64_INS_STP: stp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStorePairNonTemporal, AArch64_INS_STNP: stnp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStoreRegExtW, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStoreRegExtX, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStoreRel, AArch64_INS_STLR: stlr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStoreTagsPriv, AArch64_INS_STCT: stct */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStoreUnpriv, AArch64_INS_STTR: sttr */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapStoreUnscaledImm, AArch64_INS_STR: str */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapSwap, AArch64_INS_SWP: swp */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapSwapAcq, AArch64_INS_SWPA: swpa */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapSwapAcqRel, AArch64_INS_SWPAL: swpal */
+	0,
+	{ 0 }
+},
+
+{	/* AArch64_PCapSwapRel, AArch64_INS_SWPL: swpl */
+	0,
+	{ 0 }
 },
 
 {	/* AArch64_PFALSE, AArch64_INS_PFALSE: pfalse */
@@ -26973,22 +32313,22 @@
 	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
-{	/* AArch64_anonymous_13987, AArch64_INS_BFMOPS: bfmops */
+{	/* AArch64_anonymous_16356, AArch64_INS_BFMOPS: bfmops */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_anonymous_13988, AArch64_INS_FMOPS: fmops */
+{	/* AArch64_anonymous_16357, AArch64_INS_FMOPS: fmops */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_anonymous_5384, AArch64_INS_BFMOPA: bfmopa */
+{	/* AArch64_anonymous_5551, AArch64_INS_BFMOPA: bfmopa */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_anonymous_5385, AArch64_INS_FMOPA: fmopa */
+{	/* AArch64_anonymous_5552, AArch64_INS_FMOPA: fmopa */
 	0,
 	{ 0 }
 },
