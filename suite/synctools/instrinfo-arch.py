@@ -65,7 +65,7 @@ if arch.upper() == 'AARCH64':
 elif arch.upper() == 'ARM64':
     arch = 'AArch64'
 
-print("""
+print(r"""
 /* Capstone Disassembly Engine, http://www.capstone-engine.org */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013-2019 */
 

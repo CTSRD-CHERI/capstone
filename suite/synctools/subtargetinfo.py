@@ -14,7 +14,7 @@ f.close()
 
 arch = sys.argv[2]
 
-print("""
+print(r"""
 /* Capstone Disassembly Engine, http://www.capstone-engine.org */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013-2019 */
 
