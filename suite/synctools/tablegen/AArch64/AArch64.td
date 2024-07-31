@@ -70,6 +70,24 @@ def FeatureOutlineAtomics : SubtargetFeature<"outline-atomics", "OutlineAtomics"
 def FeatureRDM : SubtargetFeature<"rdm", "HasRDM", "true",
   "Enable ARMv8.1 Rounding Double Multiply Add/Subtract instructions">;
 
+def FeatureMorello : SubtargetFeature<"morello", "HasMorello", "true",
+  "Enable Morello instructions">;
+
+def FeatureMorelloNewVarArg : SubtargetFeature<"legacy-morello-vararg",
+  "HasMorelloLegacyVarArg", "true",
+  "Use legacy PCS for morello varargs">;
+
+def FeatureMorelloBoundedMemArgsCaller : SubtargetFeature<"bounded-morello-memargs-caller",
+  "HasMorelloBoundedMemArgsCaller", "true",
+  "Set c9 to point to memory arguments">;
+
+def FeatureMorelloBoundedMemArgsCallee : SubtargetFeature<"bounded-morello-memargs-callee",
+  "HasMorelloBoundedMemArgsCallee", "true",
+  "Use c9 to access memory arguments", [FeatureMorelloBoundedMemArgsCaller]>;
+
+def FeatureC64 : SubtargetFeature<"c64", "HasC64", "true",
+  "Enable C64 mode", [FeatureMorello]>;
+
 def FeaturePAN : SubtargetFeature<
     "pan", "HasPAN", "true",
     "Enables ARM v8.1 Privileged Access-Never extension">;
@@ -176,6 +194,30 @@ foreach i = {1-7,9-15,18,20-28,30} in
     def FeatureReserveX#i : SubtargetFeature<"reserve-x"#i, "ReserveXRegister["#i#"]", "true",
                                              "Reserve X"#i#", making it unavailable "
                                              "as a GPR">;
+
+foreach i = {8-23} in
+    def FeatureReserveC#i : SubtargetFeature<"reserve-c"#i, "ReserveCRegister["#i#"]", "true",
+                                             "Reserve C"#i#", making it unavailable "
+                                             "as a capability reg">;
+
+def FeatureUse16CapRegs : SubtargetFeature<"use-16-cap-regs", "Use16CapRegs", "true",
+                                           "Reserve the capability regs in range C8-C23",
+                                           [FeatureReserveC8,
+                                            FeatureReserveC9,
+                                            FeatureReserveC10,
+                                            FeatureReserveC11,
+                                            FeatureReserveC12,
+                                            FeatureReserveC13,
+                                            FeatureReserveC14,
+                                            FeatureReserveC15,
+                                            FeatureReserveC16,
+                                            FeatureReserveC17,
+                                            FeatureReserveC18,
+                                            FeatureReserveC19,
+                                            FeatureReserveC20,
+                                            FeatureReserveC21,
+                                            FeatureReserveC22,
+                                            FeatureReserveC23]>;
 
 foreach i = {8-15,18} in
     def FeatureCallSavedX#i : SubtargetFeature<"call-saved-x"#i,
@@ -464,11 +506,6 @@ def FeatureEL3 : SubtargetFeature<"el3", "HasEL3", "true",
 def FeatureFixCortexA53_835769 : SubtargetFeature<"fix-cortex-a53-835769",
   "FixCortexA53_835769", "true", "Mitigate Cortex-A53 Erratum 835769">;
 
-def FeatureNoBTIAtReturnTwice : SubtargetFeature<"no-bti-at-return-twice",
-                                                 "NoBTIAtReturnTwice", "true",
-                                                 "Don't place a BTI instruction "
-                                                 "after a return-twice">;
-
 //===----------------------------------------------------------------------===//
 // Architectures.
 //
@@ -557,7 +594,6 @@ include "AArch64Schedule.td"
 include "AArch64InstrInfo.td"
 include "AArch64SchedPredicates.td"
 include "AArch64SchedPredExynos.td"
-include "AArch64SchedPredAmpere.td"
 include "AArch64Combine.td"
 
 def AArch64InstrInfo : InstrInfo;
@@ -627,7 +663,6 @@ include "AArch64SchedThunderX2T99.td"
 include "AArch64SchedA64FX.td"
 include "AArch64SchedThunderX3T110.td"
 include "AArch64SchedTSV110.td"
-include "AArch64SchedAmpere1.td"
 
 def TuneA35     : SubtargetFeature<"a35", "ARMProcFamily", "CortexA35",
                                 "Cortex-A35 ARM processors">;
@@ -871,6 +906,12 @@ def TuneNeoverseN1 : SubtargetFeature<"neoversen1", "ARMProcFamily", "NeoverseN1
                                       FeatureFuseAES
                                       ]>;
 
+def TuneRainier : SubtargetFeature<"rainier", "ARMProcFamily", "Rainier",
+                                   "Rainier ARM processors", [
+                                   FeaturePostRAScheduler,
+                                   FeatureFuseAES
+                                   ]>;
+
 def TuneNeoverseN2 : SubtargetFeature<"neoversen2", "ARMProcFamily", "NeoverseN2",
                                       "Neoverse N2 ARM processors", [
                                       FeaturePostRAScheduler,
@@ -941,16 +982,6 @@ def TuneTSV110 : SubtargetFeature<"tsv110", "ARMProcFamily", "TSV110",
                                   FeatureFuseAES,
                                   FeaturePostRAScheduler]>;
 
-def TuneAmpere1 : SubtargetFeature<"ampere1", "ARMProcFamily", "Ampere1",
-                                   "Ampere Computing Ampere-1 processors", [
-                                   FeaturePostRAScheduler,
-                                   FeatureFuseAES,
-                                   FeatureLSLFast,
-                                   FeatureAggressiveFMA,
-                                   FeatureArithmeticBccFusion,
-                                   FeatureCmpBccFusion,
-                                   FeatureFuseAddress,
-                                   FeatureFuseLiterals]>;
 
 def ProcessorFeatures {
   list<SubtargetFeature> A53  = [HasV8_0aOps, FeatureCRC, FeatureCrypto,
@@ -970,7 +1001,7 @@ def ProcessorFeatures {
                                  FeatureRCPC, FeatureSSBS];
   list<SubtargetFeature> A77  = [HasV8_2aOps, FeatureCrypto, FeatureFPARMv8,
                                  FeatureNEON, FeatureFullFP16, FeatureDotProd,
-                                 FeatureRCPC, FeatureSSBS];
+                                 FeatureRCPC];
   list<SubtargetFeature> A78  = [HasV8_2aOps, FeatureCrypto, FeatureFPARMv8,
                                  FeatureNEON, FeatureFullFP16, FeatureDotProd,
                                  FeatureRCPC, FeaturePerfMon, FeatureSPE,
@@ -988,12 +1019,11 @@ def ProcessorFeatures {
                                  FeatureSB, FeatureSpecRestrict];
   list<SubtargetFeature> X1   = [HasV8_2aOps, FeatureCrypto, FeatureFPARMv8,
                                  FeatureNEON, FeatureRCPC, FeaturePerfMon,
-                                 FeatureSPE, FeatureFullFP16, FeatureDotProd,
-                                 FeatureSSBS];
+                                 FeatureSPE, FeatureFullFP16, FeatureDotProd];
   list<SubtargetFeature> X1C  = [HasV8_2aOps, FeatureCrypto, FeatureFPARMv8,
                                  FeatureNEON, FeatureRCPC, FeaturePerfMon,
                                  FeatureSPE, FeatureFullFP16, FeatureDotProd,
-                                 FeaturePAuth, FeatureSSBS];
+                                 FeaturePAuth];
   list<SubtargetFeature> X2   = [HasV9_0aOps, FeatureNEON, FeaturePerfMon,
                                  FeatureMatMulInt8, FeatureBF16, FeatureAM,
                                  FeatureMTE, FeatureETE, FeatureSVE2BitPerm,
@@ -1034,6 +1064,10 @@ def ProcessorFeatures {
   list<SubtargetFeature> NeoverseN1 = [HasV8_2aOps, FeatureCrypto, FeatureDotProd,
                                        FeatureFPARMv8, FeatureFullFP16, FeatureNEON,
                                        FeatureRCPC, FeatureSPE, FeatureSSBS];
+  list<SubtargetFeature> Rainier = [HasV8_2aOps, FeatureCrypto, FeatureDotProd,
+                                    FeatureFPARMv8, FeatureFullFP16, FeatureNEON,
+                                    FeatureRCPC, FeatureSPE, FeatureSSBS,
+                                    FeatureMorello];
   list<SubtargetFeature> NeoverseN2 = [HasV8_5aOps, FeatureBF16, FeatureETE,
                                        FeatureMatMulInt8, FeatureMTE, FeatureSVE2,
                                        FeatureSVE2BitPerm, FeatureTRBE, FeatureCrypto];
@@ -1059,8 +1093,6 @@ def ProcessorFeatures {
   list<SubtargetFeature> TSV110 = [HasV8_2aOps, FeatureCrypto, FeatureFPARMv8,
                                    FeatureNEON, FeaturePerfMon, FeatureSPE,
                                    FeatureFullFP16, FeatureFP16FML, FeatureDotProd];
-  list<SubtargetFeature> Ampere1 = [HasV8_6aOps, FeatureNEON, FeaturePerfMon,
-                                    FeatureMTE, FeatureSSBS];
 
   // ETE and TRBE are future architecture extensions. We temporarily enable them
   // by default for users targeting generic AArch64. The extensions do not
@@ -1118,6 +1150,8 @@ def : ProcessorModel<"neoverse-e1", CortexA53Model,
                      ProcessorFeatures.NeoverseE1, [TuneNeoverseE1]>;
 def : ProcessorModel<"neoverse-n1", CortexA57Model,
                      ProcessorFeatures.NeoverseN1, [TuneNeoverseN1]>;
+def : ProcessorModel<"rainier", CortexA57Model,
+                     ProcessorFeatures.Rainier, [TuneRainier]>;
 def : ProcessorModel<"neoverse-n2", CortexA57Model,
                      ProcessorFeatures.NeoverseN2, [TuneNeoverseN2]>;
 def : ProcessorModel<"neoverse-512tvb", CortexA57Model,
@@ -1197,10 +1231,6 @@ def : ProcessorModel<"a64fx", A64FXModel, ProcessorFeatures.A64FX,
 // Nvidia Carmel
 def : ProcessorModel<"carmel", NoSchedModel, ProcessorFeatures.Carmel,
                      [TuneCarmel]>;
-
-// Ampere Computing
-def : ProcessorModel<"ampere1", Ampere1Model, ProcessorFeatures.Ampere1,
-                     [TuneAmpere1]>;
 
 //===----------------------------------------------------------------------===//
 // Assembly parser

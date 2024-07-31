@@ -23,7 +23,7 @@ def ThunderXT8XModel : SchedMachineModel {
   let LoadLatency = 3;        // Optimistic load latency.
   let MispredictPenalty = 8;  // Branch mispredict penalty.
   let PostRAScheduler = 1;    // Use PostRA scheduler.
-  let CompleteModel = 1;
+  let CompleteModel = 0;
 
   list<Predicate> UnsupportedFeatures = !listconcat(SVEUnsupported.F,
                                                     PAUnsupported.F,

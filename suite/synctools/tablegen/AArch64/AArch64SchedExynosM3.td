@@ -22,7 +22,7 @@ def ExynosM3Model : SchedMachineModel {
   let LoopMicroOpBufferSize =  40; // Based on the instruction queue size.
   let LoadLatency           =   4; // Optimistic load cases.
   let MispredictPenalty     =  16; // Minimum branch misprediction penalty.
-  let CompleteModel         =   1; // Use the default model otherwise.
+  let CompleteModel         =   0; // Use the default model otherwise.
 
   list<Predicate> UnsupportedFeatures = !listconcat(SVEUnsupported.F,
                                                     PAUnsupported.F,

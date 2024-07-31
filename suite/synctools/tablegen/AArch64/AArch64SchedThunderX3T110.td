@@ -22,7 +22,7 @@ def ThunderX3T110Model : SchedMachineModel {
   // Determined via a mix of micro-arch details and experimentation.
   let LoopMicroOpBufferSize = 128; // FIXME: might be much bigger in TX3.
   let PostRAScheduler       =   1; // Using PostRA sched.
-  let CompleteModel         =   1;
+  let CompleteModel         =   0;
 
   list<Predicate> UnsupportedFeatures = !listconcat(SVEUnsupported.F,
                                                     PAUnsupported.F);

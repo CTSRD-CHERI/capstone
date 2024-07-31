@@ -21,7 +21,7 @@ def FalkorModel : SchedMachineModel {
   let LoopMicroOpBufferSize = 16;
   let LoadLatency = 3;         // Optimistic load latency.
   let MispredictPenalty = 11;  // Minimum branch misprediction penalty.
-  let CompleteModel = 1;
+  let CompleteModel = 0;
 
   list<Predicate> UnsupportedFeatures = !listconcat(SVEUnsupported.F,
                                                     PAUnsupported.F,

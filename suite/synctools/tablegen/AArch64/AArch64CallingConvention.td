@@ -107,6 +107,87 @@ def CC_AArch64_AAPCS : CallingConv<[
            CCAssignToReg<[D0, D1, D2, D3, D4, D5, D6, D7]>>,
   CCIfType<[f128, v2i64, v4i32, v8i16, v16i8, v4f32, v2f64, v8f16, v8bf16],
            CCAssignToReg<[Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[iFATPTR128], CCAssignToRegWithShadow<[C0, C1, C2, C3, C4, C5, C6, C7],
+                                              [X0, X1, X2, X3, X4, X5, X6, X7]>>,
+
+  // If more than will fit in registers, pass them on the stack instead.
+  CCIfType<[i1, i8, i16, f16], CCAssignToStack<8, 8>>,
+  CCIfType<[i32, f32], CCAssignToStack<8, 8>>,
+  CCIfType<[i64, f64, v1f64, v2f32, v1i64, v2i32, v4i16, v8i8, v4f16],
+           CCAssignToStack<8, 8>>,
+  CCIfType<[f128, v2i64, v4i32, v8i16, v16i8, v4f32, v2f64, v8f16],
+           CCAssignToStack<16, 16>>,
+  CCIfType<[iFATPTR128], CCAssignToStack<16, 16>>
+]>;
+
+// A variant to cope with alignmenent restrictions with capabilities.
+let Entry = 1 in
+def CC_AArch64_AAPCS_Pure_16Cap_Regs : CallingConv<[
+  CCIfType<[v2f32], CCBitConvertToType<v2i32>>,
+  CCIfType<[v2f64, v4f32], CCBitConvertToType<v2i64>>,
+
+  // Big endian vectors must be passed as if they were 1-element vectors so that
+  // their lanes are in a consistent order.
+  CCIfBigEndian<CCIfType<[v2i32, v2f32, v4i16, v4f16, v4bf16, v8i8],
+                         CCBitConvertToType<f64>>>,
+  CCIfBigEndian<CCIfType<[v2i64, v2f64, v4i32, v4f32, v8i16, v8f16, v8bf16, v16i8],
+                         CCBitConvertToType<f128>>>,
+
+  // An SRet is passed in C24.
+  CCIfSRet<CCIfType<[iFATPTR128], CCAssignToRegWithShadow<[C24], [X24]>>>,
+
+  // Put ByVal arguments directly on the stack. Minimum size and alignment of a
+  // slot is 64-bit.
+  CCIfByVal<CCPassByVal<8, 8>>,
+
+  // The 'nest' parameter, if any, is passed in X18.
+  // Darwin uses X18 as the platform register and hence 'nest' isn't currently
+  // supported there.
+  CCIfNest<CCAssignToReg<[X18]>>,
+
+  CCIfConsecutiveRegs<CCCustom<"CC_AArch64_Custom_Block">>,
+
+  CCIfType<[nxv16i8, nxv8i16, nxv4i32, nxv2i64, nxv2f16, nxv4f16, nxv8f16,
+	    nxv2bf16, nxv4bf16, nxv8bf16, nxv2f32, nxv4f32, nxv2f64],
+	   CCAssignToReg<[Z0, Z1, Z2, Z3, Z4, Z5, Z6, Z7]>>,
+  CCIfType<[nxv16i8, nxv8i16, nxv4i32, nxv2i64, nxv2f16, nxv4f16, nxv8f16,
+	    nxv2bf16, nxv4bf16, nxv8bf16, nxv2f32, nxv4f32, nxv2f64],
+	   CCPassIndirect<i64>>,
+
+  CCIfType<[nxv2i1, nxv4i1, nxv8i1, nxv16i1],
+	   CCAssignToReg<[P0, P1, P2, P3]>>,
+  CCIfType<[nxv2i1, nxv4i1, nxv8i1, nxv16i1],
+	   CCPassIndirect<i64>>,
+
+  // Handle i1, i8, i16, i32, i64, f32, f64 and v2f64 by passing in registers,
+  // up to eight each of GPR and FPR.
+  CCIfType<[i1, i8, i16], CCPromoteToType<i32>>,
+  CCIfType<[i32], CCAssignToRegWithShadow<[W0, W1, W2, W3, W4, W5],
+                                          [X0, X1, X2, X3, X4, X5]>>,
+  // i128 is split to two i64s, we can't fit half to register X5.
+  CCIfType<[i64], CCIfSplit<CCAssignToRegWithShadow<[X0, X2, X4],
+                                                    [X0, X1, X3]>>>,
+
+  // i128 is split to two i64s, and its stack alignment is 16 bytes.
+  CCIfType<[i64], CCIfSplit<CCAssignToStackWithShadow<8, 16, [X5]>>>,
+
+  CCIfType<[i64], CCAssignToRegWithShadow<[X0, X1, X2, X3, X4, X5],
+                                          [W0, W1, W2, W3, W4, W5]>>,
+  CCIfType<[f16], CCAssignToRegWithShadow<[H0, H1, H2, H3, H4, H5, H6, H7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[bf16], CCAssignToRegWithShadow<[H0, H1, H2, H3, H4, H5, H6, H7],
+					   [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f32], CCAssignToRegWithShadow<[S0, S1, S2, S3, S4, S5, S6, S7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f64], CCAssignToRegWithShadow<[D0, D1, D2, D3, D4, D5, D6, D7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[v1i64, v2i32, v4i16, v8i8, v1f64, v2f32, v4f16, v4bf16],
+           CCAssignToRegWithShadow<[D0, D1, D2, D3, D4, D5, D6, D7],
+                                   [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f128, v2i64, v4i32, v8i16, v16i8, v4f32, v2f64, v8f16, v8bf16],
+           CCAssignToReg<[Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[iFATPTR128], CCAssignToRegWithShadow<[C0, C1, C2, C3, C4, C5],
+                                              [X0, X1, X2, X3, X4, X5]>>,
 
   // If more than will fit in registers, pass them on the stack instead.
   CCIfType<[i1, i8, i16, f16, bf16], CCAssignToStack<8, 8>>,
@@ -114,8 +195,182 @@ def CC_AArch64_AAPCS : CallingConv<[
   CCIfType<[i64, f64, v1f64, v2f32, v1i64, v2i32, v4i16, v8i8, v4f16, v4bf16],
            CCAssignToStack<8, 8>>,
   CCIfType<[f128, v2i64, v4i32, v8i16, v16i8, v4f32, v2f64, v8f16, v8bf16],
+           CCAssignToStack<16, 16>>,
+  CCIfType<[iFATPTR128], CCAssignToStack<16, 16>>
+]>;
+
+let Entry = 1 in
+def CC_AArch64_AAPCS_Pure_32Cap_Regs : CallingConv<[
+  CCIfType<[v2f32], CCBitConvertToType<v2i32>>,
+  CCIfType<[v2f64, v4f32], CCBitConvertToType<v2i64>>,
+
+  // Big endian vectors must be passed as if they were 1-element vectors so that
+  // their lanes are in a consistent order.
+  CCIfBigEndian<CCIfType<[v2i32, v2f32, v4i16, v4f16, v4bf16, v8i8],
+                         CCBitConvertToType<f64>>>,
+  CCIfBigEndian<CCIfType<[v2i64, v2f64, v4i32, v4f32, v8i16, v8f16, v8bf16, v16i8],
+                         CCBitConvertToType<f128>>>,
+
+  // An SRet is passed in C8.
+  CCIfSRet<CCIfType<[iFATPTR128], CCAssignToRegWithShadow<[C8], [X8]>>>,
+
+  // Put ByVal arguments directly on the stack. Minimum size and alignment of a
+  // slot is 64-bit.
+  CCIfByVal<CCPassByVal<8, 8>>,
+
+  // The 'nest' parameter, if any, is passed in X18.
+  // Darwin uses X18 as the platform register and hence 'nest' isn't currently
+  // supported there.
+  CCIfNest<CCAssignToReg<[X18]>>,
+
+  CCIfConsecutiveRegs<CCCustom<"CC_AArch64_Custom_Block">>,
+
+  CCIfType<[nxv16i8, nxv8i16, nxv4i32, nxv2i64, nxv2f16, nxv4f16, nxv8f16,
+            nxv2bf16, nxv4bf16, nxv8bf16, nxv2f32, nxv4f32, nxv2f64],
+           CCAssignToReg<[Z0, Z1, Z2, Z3, Z4, Z5, Z6, Z7]>>,
+  CCIfType<[nxv16i8, nxv8i16, nxv4i32, nxv2i64, nxv2f16, nxv4f16, nxv8f16,
+            nxv2bf16, nxv4bf16, nxv8bf16, nxv2f32, nxv4f32, nxv2f64],
+           CCPassIndirect<i64>>,
+
+  CCIfType<[nxv2i1, nxv4i1, nxv8i1, nxv16i1],
+           CCAssignToReg<[P0, P1, P2, P3]>>,
+  CCIfType<[nxv2i1, nxv4i1, nxv8i1, nxv16i1],
+           CCPassIndirect<i64>>,
+
+  // Handle i1, i8, i16, i32, i64, f32, f64 and v2f64 by passing in registers,
+  // up to eight each of GPR and FPR.
+  CCIfType<[i1, i8, i16], CCPromoteToType<i32>>,
+  CCIfType<[i32], CCAssignToRegWithShadow<[W0, W1, W2, W3, W4, W5, W6, W7],
+                                          [X0, X1, X2, X3, X4, X5, X6, X7]>>,
+  // i128 is split to two i64s, we can't fit half to register X5.
+  CCIfType<[i64], CCIfSplit<CCAssignToRegWithShadow<[X0, X2, X4, X6],
+                                                    [X0, X1, X3, X5]>>>,
+
+  // i128 is split to two i64s, and its stack alignment is 16 bytes.
+  CCIfType<[i64], CCIfSplit<CCAssignToStackWithShadow<8, 16, [X7]>>>,
+
+  CCIfType<[i64], CCAssignToRegWithShadow<[X0, X1, X2, X3, X4, X5, X6, X7],
+                                          [W0, W1, W2, W3, W4, W5, W6, W7]>>,
+  CCIfType<[f16], CCAssignToRegWithShadow<[H0, H1, H2, H3, H4, H5, H6, H7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[bf16], CCAssignToRegWithShadow<[H0, H1, H2, H3, H4, H5, H6, H7],
+                                           [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f32], CCAssignToRegWithShadow<[S0, S1, S2, S3, S4, S5, S6, S7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f64], CCAssignToRegWithShadow<[D0, D1, D2, D3, D4, D5, D6, D7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[v1i64, v2i32, v4i16, v8i8, v1f64, v2f32, v4f16, v4bf16],
+           CCAssignToRegWithShadow<[D0, D1, D2, D3, D4, D5, D6, D7],
+                                   [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f128, v2i64, v4i32, v8i16, v16i8, v4f32, v2f64, v8f16, v8bf16],
+           CCAssignToReg<[Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[iFATPTR128], CCAssignToRegWithShadow<[C0, C1, C2, C3, C4, C5, C6, C7],
+                                                 [X0, X1, X2, X3, X4, X5, X6, X7]>>,
+
+  // If more than will fit in registers, pass them on the stack instead.
+  CCIfType<[i1, i8, i16, f16, bf16], CCAssignToStack<8, 8>>,
+  CCIfType<[i32, f32], CCAssignToStack<8, 8>>,
+  CCIfType<[i64, f64, v1f64, v2f32, v1i64, v2i32, v4i16, v8i8, v4f16, v4bf16],
+           CCAssignToStack<8, 8>>,
+  CCIfType<[f128, v2i64, v4i32, v8i16, v16i8, v4f32, v2f64, v8f16, v8bf16],
+           CCAssignToStack<16, 16>>,
+  CCIfType<[iFATPTR128], CCAssignToStack<16, 16>>
+]>;
+
+let Entry = 1 in
+def CC_AArch64_AAPCS_Pure_VarArg : CallingConv<[
+  CCIfType<[iPTR], CCBitConvertToType<i64>>,
+  CCIfType<[v2f32], CCBitConvertToType<v2i32>>,
+  CCIfType<[v2f64, v4f32, f128], CCBitConvertToType<v2i64>>,
+
+  CCIfConsecutiveRegs<CCCustom<"CC_AArch64_Custom_Stack_Block">>,
+
+  // Handle all scalar types as either i64 or f64.
+  CCIfType<[i8, i16, i32], CCPromoteToType<i64>>,
+  CCIfType<[f16, bf16, f32], CCPromoteToType<f64>>,
+
+  // If we see an i64 that is not marked as isSplit we either
+  // need a 8 byte alignment if the previously seen register
+  // was marked isSplit or 16 byte alignment if not.
+  // Use a custom action for this.
+  CCIfType<[i64], CCCustom<"CC_AArch64_VarArgs_SplitReg_Block">>,
+
+  // Everything is on the stack and aligned to 16 bytes.
+  CCIfType<[f64, v1i64, v2i32, v4i16, v8i8, v1f64, v2f32, v4f16, v4bf16],
+           CCAssignToStack<8, 16>>,
+  CCIfType<[iFATPTR128, v2i64, v4i32, v8i16, v16i8, v4f32, v2f64, v8f16, v8bf16],
            CCAssignToStack<16, 16>>
 ]>;
+
+// The CCall convention is identical to the aapcs one, except we pass the
+// first two fat pointers through C8/C9 and the first integer
+// (i8, i16, i32 or i64) in x10.
+let Entry = 1 in
+def CC_AArch64_AAPCS_CCall : CallingConv<[
+  CCIfType<[v2f32], CCBitConvertToType<v2i32>>,
+  CCIfType<[v2f64, v4f32], CCBitConvertToType<v2i64>>,
+
+  // Big endian vectors must be passed as if they were 1-element vectors so that
+  // their lanes are in a consistent order.
+  CCIfBigEndian<CCIfType<[v2i32, v2f32, v4i16, v4f16, v8i8],
+                         CCBitConvertToType<f64>>>,
+  CCIfBigEndian<CCIfType<[v2i64, v2f64, v4i32, v4f32, v8i16, v8f16, v16i8],
+                         CCBitConvertToType<f128>>>,
+  // FIXME: this might not make sense, given that probably most/all ccalls
+  // will have just one argument.
+  // A SRet is passed in C8.
+  CCIfSRet<CCIfType<[i64], CCAssignToRegWithShadow<[X8], [W8]>>>,
+  CCIfSRet<CCIfType<[iFATPTR128], CCAssignToRegWithShadow<[C8], [X8]>>>,
+
+  // Put ByVal arguments directly on the stack. Minimum size and alignment of a
+  // slot is 64-bit.
+  CCIfByVal<CCPassByVal<8, 16>>,
+
+  // The 'nest' parameter, if any, is passed in X18.
+  // Darwin uses X18 as the platform register and hence 'nest' isn't currently
+  // supported there.
+  CCIfNest<CCAssignToReg<[X18]>>,
+
+  CCIfConsecutiveRegs<CCCustom<"CC_AArch64_Custom_CCall_Block">>,
+
+  // Handle i1, i8, i16, i32, i64, f32, f64 and v2f64 by passing in registers,
+  // up to eight each of GPR and FPR.
+  CCIfType<[i1, i8, i16], CCPromoteToType<i32>>,
+  CCIfType<[i32], CCAssignToRegWithShadow<[W11, W0, W1, W2, W3, W4, W5, W6, W7],
+                                          [X11, X0, X1, X2, X3, X4, X5, X6, X7]>>,
+  // i128 is split to two i64s, we can't fit half to register X7.
+  CCIfType<[i64], CCIfSplit<CCAssignToRegWithShadow<[X0, X2, X4, X6],
+                                                    [X0, X1, X3, X5]>>>,
+
+  // i128 is split to two i64s, and its stack alignment is 16 bytes.
+  CCIfType<[i64], CCIfSplit<CCAssignToStackWithShadow<8, 16, [X7]>>>,
+
+  CCIfType<[i64], CCAssignToRegWithShadow<[X11, X0, X1, X2, X3, X4, X5, X6, X7],
+                                          [W11, W0, W1, W2, W3, W4, W5, W6, W7]>>,
+  CCIfType<[f16], CCAssignToRegWithShadow<[H0, H1, H2, H3, H4, H5, H6, H7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f32], CCAssignToRegWithShadow<[S0, S1, S2, S3, S4, S5, S6, S7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f64], CCAssignToRegWithShadow<[D0, D1, D2, D3, D4, D5, D6, D7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[v1i64, v2i32, v4i16, v8i8, v1f64, v2f32, v4f16],
+           CCAssignToRegWithShadow<[D0, D1, D2, D3, D4, D5, D6, D7],
+                                   [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f128, v2i64, v4i32, v8i16, v16i8, v4f32, v2f64, v8f16],
+           CCAssignToReg<[Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[iFATPTR128], CCAssignToRegWithShadow<[C9, C10, C0, C1, C2, C3, C4, C5],
+                                                 [X9, X10, X0, X1, X2, X3, X4, X5]>>,
+
+  // If more than will fit in registers, pass them on the stack instead.
+  CCIfType<[i1, i8, i16, f16], CCAssignToStack<8, 16>>,
+  CCIfType<[i32, f32], CCAssignToStack<8, 16>>,
+  CCIfType<[i64, f64, v1f64, v2f32, v1i64, v2i32, v4i16, v8i8, v4f16],
+           CCAssignToStack<8, 16>>,
+  CCIfType<[f128, v2i64, v4i32, v8i16, v16i8, v4f32, v2f64, v8f16],
+           CCAssignToStack<16, 16>>,
+  CCIfType<[iFATPTR128], CCAssignToStack<16, 16>>
+]>;
+
 
 let Entry = 1 in
 def RetCC_AArch64_AAPCS : CallingConv<[
@@ -150,7 +405,80 @@ def RetCC_AArch64_AAPCS : CallingConv<[
            CCAssignToReg<[Z0, Z1, Z2, Z3, Z4, Z5, Z6, Z7]>>,
 
   CCIfType<[nxv2i1, nxv4i1, nxv8i1, nxv16i1],
-           CCAssignToReg<[P0, P1, P2, P3]>>
+           CCAssignToReg<[P0, P1, P2, P3]>>,
+
+  CCIfType<[iFATPTR128], CCAssignToRegWithShadow<[C0, C1, C2, C3, C4, C5, C6, C7],
+                                              [X0, X1, X2, X3, X4, X5, X6, X7]>>
+]>;
+
+let Entry = 1 in
+def RetCC_AArch64_AAPCS_Pure_16Cap_Regs : CallingConv<[
+  CCIfType<[iPTR], CCBitConvertToType<i64>>,
+  CCIfType<[v2f32], CCBitConvertToType<v2i32>>,
+  CCIfType<[v2f64, v4f32], CCBitConvertToType<v2i64>>,
+
+  CCIfSwiftError<CCIfType<[i64], CCAssignToRegWithShadow<[X21], [W21]>>>,
+
+  // Big endian vectors must be passed as if they were 1-element vectors so that
+  // their lanes are in a consistent order.
+  CCIfBigEndian<CCIfType<[v2i32, v2f32, v4i16, v4f16, v8i8],
+                         CCBitConvertToType<f64>>>,
+  CCIfBigEndian<CCIfType<[v2i64, v2f64, v4i32, v4f32, v8i16, v8f16, v16i8],
+                         CCBitConvertToType<f128>>>,
+
+  CCIfType<[i1, i8, i16], CCPromoteToType<i32>>,
+  CCIfType<[i32], CCAssignToRegWithShadow<[W0, W1, W2, W3, W4, W5],
+                                          [X0, X1, X2, X3, X4, X5]>>,
+  CCIfType<[i64], CCAssignToRegWithShadow<[X0, X1, X2, X3, X4, X5],
+                                          [W0, W1, W2, W3, W4, W5]>>,
+  CCIfType<[f16], CCAssignToRegWithShadow<[H0, H1, H2, H3, H4, H5, H6, H7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f32], CCAssignToRegWithShadow<[S0, S1, S2, S3, S4, S5, S6, S7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f64], CCAssignToRegWithShadow<[D0, D1, D2, D3, D4, D5, D6, D7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[v1i64, v2i32, v4i16, v8i8, v1f64, v2f32, v4f16],
+      CCAssignToRegWithShadow<[D0, D1, D2, D3, D4, D5, D6, D7],
+                              [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f128, v2i64, v4i32, v8i16, v16i8, v4f32, v2f64, v8f16],
+      CCAssignToReg<[Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[iFATPTR128], CCAssignToRegWithShadow<[C0, C1, C2, C3, C4, C5],
+                                              [X0, X1, X2, X3, X4, X5]>>
+]>;
+
+let Entry = 1 in
+def RetCC_AArch64_AAPCS_Pure_32Cap_Regs : CallingConv<[
+  CCIfType<[iPTR], CCBitConvertToType<i64>>,
+  CCIfType<[v2f32], CCBitConvertToType<v2i32>>,
+  CCIfType<[v2f64, v4f32], CCBitConvertToType<v2i64>>,
+
+  CCIfSwiftError<CCIfType<[i64], CCAssignToRegWithShadow<[X21], [W21]>>>,
+
+  // Big endian vectors must be passed as if they were 1-element vectors so that
+  // their lanes are in a consistent order.
+  CCIfBigEndian<CCIfType<[v2i32, v2f32, v4i16, v4f16, v8i8],
+                         CCBitConvertToType<f64>>>,
+  CCIfBigEndian<CCIfType<[v2i64, v2f64, v4i32, v4f32, v8i16, v8f16, v16i8],
+                         CCBitConvertToType<f128>>>,
+
+  CCIfType<[i1, i8, i16], CCPromoteToType<i32>>,
+  CCIfType<[i32], CCAssignToRegWithShadow<[W0, W1, W2, W3, W4, W5, W6, W7],
+                                          [X0, X1, X2, X3, X4, X5, X6, X7]>>,
+  CCIfType<[i64], CCAssignToRegWithShadow<[X0, X1, X2, X3, X4, X5, X6, X7],
+                                          [W0, W1, W2, W3, W4, W5, W6, W7]>>,
+  CCIfType<[f16], CCAssignToRegWithShadow<[H0, H1, H2, H3, H4, H5, H6, H7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f32], CCAssignToRegWithShadow<[S0, S1, S2, S3, S4, S5, S6, S7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f64], CCAssignToRegWithShadow<[D0, D1, D2, D3, D4, D5, D6, D7],
+                                          [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[v1i64, v2i32, v4i16, v8i8, v1f64, v2f32, v4f16],
+      CCAssignToRegWithShadow<[D0, D1, D2, D3, D4, D5, D6, D7],
+                              [Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[f128, v2i64, v4i32, v8i16, v16i8, v4f32, v2f64, v8f16],
+      CCAssignToReg<[Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7]>>,
+  CCIfType<[iFATPTR128], CCAssignToRegWithShadow<[C0, C1, C2, C3, C4, C5, C6, C7],
+                                                 [X0, X1, X2, X3, X4, X5, X6, X7]>>
 ]>;
 
 // Vararg functions on windows pass floats in integer registers
@@ -359,6 +687,41 @@ def CC_AArch64_GHC : CallingConv<[
 // It would be better to model its preservation semantics properly (create a
 // vreg on entry, use it in RET & tail call generation; make that vreg def if we
 // end up saving LR as part of a call frame). Watch this space...
+def CSR_AArch64_AAPCS_16Cap_Regs :
+    CalleeSavedRegs<(add (sequence "X%u", 19, 23),
+                         (sequence "C%u", 24, 28), CLR, CFP,
+                         (sequence "D%u",  8, 15))>;
+
+def CSR_AArch64_AAPCS_16Cap_Regs_Alternate :
+    CalleeSavedRegs<(add CLR, CFP, (sequence "C%u", 24, 28),
+                                   (sequence "X%u", 19, 23),
+                                   (sequence "D%u",  8, 15))>;
+
+def CSR_AArch64_AAPCS_32Cap_Regs :
+    CalleeSavedRegs<(add (sequence "C%u", 19, 28), CLR, CFP,
+                         (sequence "D%u",  8, 15))>;
+
+def CSR_AArch64_AAPCS_32Cap_Regs_Alternate :
+    CalleeSavedRegs<(add CLR, CFP, (sequence "C%u", 19, 28),
+                                   (sequence "D%u",  8, 15))>;
+
+def CSR_AArch64_AAPCS_32Cap_DescABI_Regs :
+    CalleeSavedRegs<(add (sequence "C%u", 19, 27), CLR, C17,
+                         (sequence "D%u",  8, 15))>;
+
+def CSR_AArch64_AAPCS_32Cap_DescABI_Caller_Regs :
+    CalleeSavedRegs<(add (sequence "C%u", 19, 27), CLR, C17,
+                         (sequence "D%u",  8, 15))>;
+
+// C24 is used for passing the indirect function result, so we can't make it
+// callee saved. C9, C10 are used for passing the sealed DDC/PCC pair.
+def CSR_AArch64_AAPCS_CCall : CalleeSavedRegs<(add
+                                           (sequence "C%u", 19, 28), CLR, CFP,
+                                           (sequence "D%u", 8, 15))>;
+def CSR_AArch64_AAPCS_CCall_Alternate :
+    CalleeSavedRegs<(add CLR, CFP, (sequence "C%u", 19, 28),
+                         (sequence "D%u", 8, 15))>;
+
 def CSR_AArch64_AAPCS : CalleeSavedRegs<(add X19, X20, X21, X22, X23, X24,
                                            X25, X26, X27, X28, LR, FP,
                                            D8,  D9,  D10, D11,
@@ -423,6 +786,21 @@ def CSR_AArch64_AllRegs
                            (sequence "B%u", 0, 31), (sequence "H%u", 0, 31),
                            (sequence "S%u", 0, 31), (sequence "D%u", 0, 31),
                            (sequence "Q%u", 0, 31))>;
+def CSR_AArch64_AllRegs_16Cap
+    : CalleeSavedRegs<(add (sequence "W%u", 0, 30), WSP,
+                           (sequence "X%u", 0, 28), FP, LR, SP,
+                           (sequence "B%u", 0, 31), (sequence "H%u", 0, 31),
+                           (sequence "S%u", 0, 31), (sequence "D%u", 0, 31),
+                           (sequence "Q%u", 0, 31),
+                           (sequence "C%u", 0,  7), (sequence "C%u",24, 28),
+                           CFP, CLR, CSP)>;
+def CSR_AArch64_AllRegs_32Cap
+    : CalleeSavedRegs<(add (sequence "W%u", 0, 30), WSP,
+                           (sequence "X%u", 0, 28), FP, LR, SP,
+                           (sequence "B%u", 0, 31), (sequence "H%u", 0, 31),
+                           (sequence "S%u", 0, 31), (sequence "D%u", 0, 31),
+                           (sequence "Q%u", 0, 31),
+                           (sequence "C%u", 0, 28), CFP, CLR, CSP)>;
 
 def CSR_AArch64_NoRegs : CalleeSavedRegs<(add)>;
 

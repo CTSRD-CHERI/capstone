@@ -22,7 +22,7 @@ def TSV110Model : SchedMachineModel {
   let LoopMicroOpBufferSize =  16; 
   let LoadLatency           =   4; // Optimistic load latency.
   let MispredictPenalty     =  14; // Fetch + Decode/Rename/Dispatch + Branch
-  let CompleteModel         =   1;
+  let CompleteModel         =   0;
 
   list<Predicate> UnsupportedFeatures = !listconcat(SVEUnsupported.F,
                                                     PAUnsupported.F);

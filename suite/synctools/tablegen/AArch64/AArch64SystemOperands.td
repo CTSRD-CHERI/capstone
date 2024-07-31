@@ -1698,6 +1698,64 @@ def : RWSysReg<"PMSNEVFR_EL1",      0b11, 0b000, 0b1001, 0b1001, 0b001>;
 let Requires = [{ {AArch64::FeatureAppleA7SysReg} }] in
 def : RWSysReg<"CPM_IOACC_CTL_EL3", 0b11, 0b111, 0b1111, 0b0010, 0b000>;
 
+// GPR64 accessible Morello system registers
+//
+let Requires = [{ {AArch64::FeatureMorello} }] in {
+
+def : RWSysReg<"CCTLR_EL0",  0b11, 0b011, 0b0001, 0b0010, 0b010>;
+def : RWSysReg<"CCTLR_EL1",  0b11, 0b000, 0b0001, 0b0010, 0b010>;
+def : RWSysReg<"CCTLR_EL12", 0b11, 0b101, 0b0001, 0b0010, 0b010>;
+def : RWSysReg<"CCTLR_EL2",  0b11, 0b100, 0b0001, 0b0010, 0b010>;
+def : RWSysReg<"CCTLR_EL3",  0b11, 0b110, 0b0001, 0b0010, 0b010>;
+def : RWSysReg<"CHCR_EL2",   0b11, 0b100, 0b0001, 0b0010, 0b011>;
+def : RWSysReg<"CSCR_EL3",   0b11, 0b110, 0b0001, 0b0010, 0b011>;
+def : RWSysReg<"RSP_EL0",    0b11, 0b111, 0b0100, 0b0001, 0b011>;
+def : RWSysReg<"RTPIDR_EL0", 0b11, 0b011, 0b1101, 0b0000, 0b100>;
+
+} // FeatureMorello
+
+class MorelloCSysReg<string name, bits<2> op0, bits<3> op1, bits<4> crn, bits<4> crm,
+                     bits<3> op2> : SearchableTable {
+  let SearchableFields = ["Name", "Encoding"];
+  let EnumValueField = "Encoding";
+
+  string Name = name;
+  bits<16> Encoding;
+  let Encoding{15-14} = op0;
+  let Encoding{13-11} = op1;
+  let Encoding{10-7} = crn;
+  let Encoding{6-3} = crm;
+  let Encoding{2-0} = op2;
+  code Requires = [{ {AArch64::FeatureMorello} }];
+}
+
+def : MorelloCSysReg<"CDBGDTR_EL0",     0b10, 0b011, 0b0000, 0b0100, 0b000>;
+def : MorelloCSysReg<"CDLR_EL0",        0b11, 0b011, 0b0100, 0b0101, 0b001>;
+def : MorelloCSysReg<"CELR_EL1",        0b11, 0b000, 0b0100, 0b0000, 0b001>;
+def : MorelloCSysReg<"CELR_EL12",       0b11, 0b101, 0b0100, 0b0000, 0b001>;
+def : MorelloCSysReg<"CELR_EL2",        0b11, 0b100, 0b0100, 0b0000, 0b001>;
+def : MorelloCSysReg<"CELR_EL3",        0b11, 0b110, 0b0100, 0b0000, 0b001>;
+def : MorelloCSysReg<"CID_EL0",         0b11, 0b011, 0b1101, 0b0000, 0b111>;
+def : MorelloCSysReg<"CSP_EL0",         0b11, 0b000, 0b0100, 0b0001, 0b000>;
+def : MorelloCSysReg<"CSP_EL1",         0b11, 0b100, 0b0100, 0b0001, 0b000>;
+def : MorelloCSysReg<"CSP_EL2",         0b11, 0b110, 0b0100, 0b0001, 0b000>;
+def : MorelloCSysReg<"CTPIDR_EL0",      0b11, 0b011, 0b1101, 0b0000, 0b010>;
+def : MorelloCSysReg<"CTPIDR_EL1",      0b11, 0b000, 0b1101, 0b0000, 0b100>;
+def : MorelloCSysReg<"CTPIDR_EL2",      0b11, 0b100, 0b1101, 0b0000, 0b010>;
+def : MorelloCSysReg<"CTPIDR_EL3",      0b11, 0b110, 0b1101, 0b0000, 0b010>;
+def : MorelloCSysReg<"CTPIDRRO_EL0",    0b11, 0b011, 0b1101, 0b0000, 0b011>;
+def : MorelloCSysReg<"CVBAR_EL1",       0b11, 0b000, 0b1100, 0b0000, 0b000>;
+def : MorelloCSysReg<"CVBAR_EL12",      0b11, 0b101, 0b1100, 0b0000, 0b000>;
+def : MorelloCSysReg<"CVBAR_EL2",       0b11, 0b100, 0b1100, 0b0000, 0b000>;
+def : MorelloCSysReg<"CVBAR_EL3",       0b11, 0b110, 0b1100, 0b0000, 0b000>;
+def : MorelloCSysReg<"DDC",             0b11, 0b011, 0b0100, 0b0001, 0b001>;
+def : MorelloCSysReg<"DDC_EL0",         0b11, 0b000, 0b0100, 0b0001, 0b001>;
+def : MorelloCSysReg<"DDC_EL1",         0b11, 0b100, 0b0100, 0b0001, 0b001>;
+def : MorelloCSysReg<"DDC_EL2",         0b11, 0b110, 0b0100, 0b0001, 0b001>;
+def : MorelloCSysReg<"RCSP_EL0",        0b11, 0b111, 0b0100, 0b0001, 0b011>;
+def : MorelloCSysReg<"RCTPIDR_EL0",     0b11, 0b011, 0b1101, 0b0000, 0b100>;
+def : MorelloCSysReg<"RDDC_EL0",        0b11, 0b011, 0b0100, 0b0011, 0b001>;
+
 // Scalable Matrix Extension (SME)
 //                                 Op0   Op1    CRn     CRm     Op2
 let Requires = [{ {AArch64::FeatureSME} }] in {
