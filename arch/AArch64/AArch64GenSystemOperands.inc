@@ -2707,6 +2707,74 @@ const SysReg *lookupSysRegByEncoding(uint16_t Encoding)
     return &SysRegsList[Index[i].index];
 }
 
+static const MorelloCSysReg MorelloCSysRegsList[] = {
+  { "cdbgdtr_el0",  0x9820 }, // 0
+  { "cdlr_el0",  0xDA29 }, // 1
+  { "celr_el1",  0xC201 }, // 2
+  { "celr_el12",  0xEA01 }, // 3
+  { "celr_el2",  0xE201 }, // 4
+  { "celr_el3",  0xF201 }, // 5
+  { "cid_el0",  0xDE87 }, // 6
+  { "csp_el0",  0xC208 }, // 7
+  { "csp_el1",  0xE208 }, // 8
+  { "csp_el2",  0xF208 }, // 9
+  { "ctpidrro_el0",  0xDE83 }, // 10
+  { "ctpidr_el0",  0xDE82 }, // 11
+  { "ctpidr_el1",  0xC684 }, // 12
+  { "ctpidr_el2",  0xE682 }, // 13
+  { "ctpidr_el3",  0xF682 }, // 14
+  { "cvbar_el1",  0xC600 }, // 15
+  { "cvbar_el12",  0xEE00 }, // 16
+  { "cvbar_el2",  0xE600 }, // 17
+  { "cvbar_el3",  0xF600 }, // 18
+  { "ddc",  0xDA09 }, // 19
+  { "ddc_el0",  0xC209 }, // 20
+  { "ddc_el1",  0xE209 }, // 21
+  { "ddc_el2",  0xF209 }, // 22
+  { "rcsp_el0",  0xFA0B }, // 23
+  { "rctpidr_el0",  0xDE84 }, // 24
+  { "rddc_el0",  0xDA19 }, // 25
+};
+
+const MorelloCSysReg *lookupMorelloCSysRegByEncoding(uint16_t Encoding)
+{
+  unsigned int i;
+  static const struct IndexType Index[] = {
+    { 0x9820, 0 },
+    { 0xC201, 2 },
+    { 0xC208, 7 },
+    { 0xC209, 20 },
+    { 0xC600, 15 },
+    { 0xC684, 12 },
+    { 0xDA09, 19 },
+    { 0xDA19, 25 },
+    { 0xDA29, 1 },
+    { 0xDE82, 11 },
+    { 0xDE83, 10 },
+    { 0xDE84, 24 },
+    { 0xDE87, 6 },
+    { 0xE201, 4 },
+    { 0xE208, 8 },
+    { 0xE209, 21 },
+    { 0xE600, 17 },
+    { 0xE682, 13 },
+    { 0xEA01, 3 },
+    { 0xEE00, 16 },
+    { 0xF201, 5 },
+    { 0xF208, 9 },
+    { 0xF209, 22 },
+    { 0xF600, 18 },
+    { 0xF682, 14 },
+    { 0xFA0B, 23 },
+  };
+
+  i = binsearch_IndexTypeEncoding(Index, ARR_SIZE(Index), Encoding);
+  if (i == -1)
+    return NULL;
+  else
+    return &MorelloCSysRegsList[Index[i].index];
+}
+
 static const PState PStatesList[] = {
   { "daifclr",  0x1F }, // 0
   { "daifset",  0x1E }, // 1

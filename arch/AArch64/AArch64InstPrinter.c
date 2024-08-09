@@ -2752,6 +2752,107 @@ static void printGPR64x8(MCInst *MI, unsigned OpNum, SStream *O)
   	SStream_concat0(O, getRegisterName(MCRegisterInfo_getSubReg(MI->MRI, Reg, AArch64_x8sub_0), AArch64_NoRegAltName));
 }
 
+// Morello insns
+
+static void printC64CapToGPR(MCInst *MI, unsigned OpNum,
+                                          SStream *O) {
+  // bool HasC64 = STI.getFeatureBits()[AArch64::FeatureC64] != 0;
+  bool HasC64 = 1;
+  // bool HasMorello = STI.getFeatureBits()[AArch64::FeatureMorello] != 0;
+  bool HasMorello = 1;
+  // bool Has16Caps = STI.getFeatureBits()[AArch64::FeatureUse16CapRegs] != 0;
+  bool Has16Caps = 1;
+  unsigned int Reg = MCOperand_getReg(MCInst_getOperand(MI, OpNum));
+  bool UseXReg = (Reg > AArch64_X7 && Reg < AArch64_X24) && Has16Caps;
+  if (HasMorello && HasC64 && !UseXReg) {
+    const MCRegisterClass *CapRC =
+	MCRegisterInfo_getRegClass(MI->MRI, AArch64_CapRegClassID);
+    Reg = MCRegisterInfo_getMatchingSuperReg(MI->MRI, Reg, AArch64_sub_64, CapRC);
+  }
+  SStream_concat0(O, getRegisterName(Reg, AArch64_NoRegAltName));
+}
+
+static void printCapSystemRegister(MCInst *MI, unsigned OpNo,
+                                                SStream *O) {
+  unsigned Val = MCOperand_getImm(MCInst_getOperand(MI, OpNo));
+  const MorelloCSysReg *Reg = lookupMorelloCSysRegByEncoding(Val);
+  if (Reg)
+    SStream_concat0(O, Reg->Name);
+  else {
+    unsigned Op0 = (Val >> 14) & 3;
+    unsigned Op1 = (Val >> 11) & 7;
+    unsigned Cn = (Val >> 7) & 0xF;
+    unsigned Cm = (Val >> 3) & 0xF;
+    unsigned Op2 = Val & 7;
+    // O << '#' << Op0 << ", #" << Op1 << ", #" << Cn << ", #" << Cm << ", #" << Op2;
+    SStream_concat(O, "#%u, #%u, #%u, #%u, #%u", Op0, Op1, Cn, Cm, Op2);
+  }
+}
+
+static void printCapLitLabel(MCInst *MI,
+                                          unsigned OpNum,
+                                         SStream *O) {
+  MCOperand *Op = MCInst_getOperand(MI, OpNum);
+
+  if (MCOperand_isImm(Op)) {
+    int64_t Offset = MCOperand_getImm(Op) * 16;
+    // O << "#" << formatImm(Offset);
+    printInt64Bang(O, Offset);
+    return;
+  }
+}
+
+static void printAdrdpLabel(MCInst *MI,
+                                        unsigned OpNum,
+                                        SStream *O) {
+  MCOperand *Op = MCInst_getOperand(MI, OpNum);
+
+  if (MCOperand_isImm(Op)) {
+    const uint64_t Offset = MCOperand_getImm(Op) * 4096;
+    //if (PrintBranchImmAsAddress)
+      // O << formatHex(Offset);
+      //printUInt64(O, Offset);
+    //else
+      // O << "#" << Offset;
+      printUInt64Bang(O, Offset);
+    return;
+  }
+
+  // Otherwise, just print the expression.
+  // MI->getOperand(OpNum).getExpr()->print(O, &MAI);
+}
+
+static void printCapPerm(MCInst *MI, unsigned OpNo,
+                                      SStream *O) {
+  unsigned Val = MCOperand_getImm(MCInst_getOperand(MI, OpNo));
+  SStream_concat0(O, getCapPermName((CapPerm)Val));
+}
+
+static void printCapSealForm(MCInst *MI, unsigned OpNo,
+                                          SStream *O) {
+  unsigned Val = MCOperand_getImm(MCInst_getOperand(MI, OpNo));
+  SStream_concat0(O, getCapSealFormName((SealForm)Val));
+}
+
+static void printScbndsImm(MCInst *MI, unsigned OpNum,
+                                        SStream *O) {
+  MCOperand *Op = MCInst_getOperand(MI, OpNum);
+  assert(MCOperand_isImm(MCInst_getOperand(MI, OpNum)) && "Unexpected operand type");
+  assert(MCOperand_isImm(MCInst_getOperand(MI, OpNum + 1)) && "Unexpected operand type");
+  unsigned Val = (MCOperand_getImm(Op) & 0x3f);
+  assert(Val == MCOperand_getImm(Op) && "scbndse immediate out of range!");
+  unsigned Shift =
+      AArch64_AM_getShiftValue(MCOperand_getImm(MCInst_getOperand(MI, OpNum + 1)));
+  // O << '#' << formatImm(Val);
+  printUInt64Bang(O, Val);
+  if (Shift != 0)
+    printShifter(MI, OpNum + 1, O);
+
+  /*if (CommentStream)*/
+  /*  *CommentStream << '=' << formatImm(Val << Shift) << '\n';*/
+}
+
+
 #define PRINT_ALIAS_INSTR
 #include "AArch64GenAsmWriter.inc"
 #include "AArch64GenRegisterName.inc"

@@ -197,6 +197,47 @@ inline static unsigned getDRegFromBReg(unsigned Reg)
   return Reg;
 }
 
+typedef enum SealForm {
+    Invalid = 0,
+    RB   = 0b01,
+    LPB  = 0b10,
+    LB   = 0b11,
+} SealForm;
+
+inline static const char *getCapSealFormName(SealForm Perm) {
+  switch (Perm) {
+  default: // llvm_unreachable("Unknown capability permission");
+  case RB: return "rb";
+  case LPB: return "lpb";
+  case LB: return "lb";
+  }
+}
+
+typedef enum CapPerm {
+    None = 0b000,
+    X   = 0b001,
+    W   = 0b010,
+    WX  = 0b011,
+    R   = 0b100,
+    RX  = 0b101,
+    RW  = 0b110,
+    RWX = 0b111
+} CapPerm;
+
+inline static const char *getCapPermName(CapPerm Perm) {
+  switch (Perm) {
+  default: // llvm_unreachable("Unknown capability permission");
+  case None: return "#0";
+  case X: return "x";
+  case W: return "w";
+  case WX: return "wx";
+  case R: return "r";
+  case RX: return "rx";
+  case RW: return "rw";
+  case RWX: return "rwx";
+  }
+}
+
 // // Enums corresponding to AArch64 condition codes
 // The CondCodes constants map directly to the 4-bit encoding of the
 // condition field for predicated instructions.
@@ -500,6 +541,7 @@ typedef struct SysAliasSysReg {
 } SysAliasSysReg;
 
 #define SysReg SysAliasSysReg
+#define MorelloCSysReg SysAlias
 
 typedef struct SysAliasImm {
   const char *Name;
@@ -526,6 +568,7 @@ const PSB *lookupPSBByEncoding(uint16_t Encoding);
 const ISB *lookupISBByEncoding(uint16_t Encoding);
 const TSB *lookupTSBByEncoding(uint16_t Encoding);
 const SysReg *lookupSysRegByEncoding(uint16_t Encoding);
+const MorelloCSysReg *lookupMorelloCSysRegByEncoding(uint16_t Encoding);
 const PState *lookupPStateByEncoding(uint16_t Encoding);
 const SVEPREDPAT *lookupSVEPREDPATByEncoding(uint16_t Encoding);
 const ExactFPImm *lookupExactFPImmByEnum(uint16_t Encoding);

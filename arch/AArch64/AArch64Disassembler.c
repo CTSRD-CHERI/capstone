@@ -182,6 +182,30 @@ static DecodeStatus DecodeCPYMemOpInstruction(MCInst *Inst, uint32_t insn,
 static DecodeStatus DecodeSETMemOpInstruction(MCInst *Inst, uint32_t insn,
         uint64_t Addr, const void *Decoder);
 
+// Morello instruction decode
+static DecodeStatus DecodeCapspRegisterClass(MCInst *Inst, unsigned RegNo,
+                                             uint64_t Address,
+                                             const void *Decoder);
+
+static DecodeStatus DecodeCAddSubImmInstruction(MCInst *Inst,
+                                                uint32_t insn, uint64_t Addr,
+                                                const void *Decoder);
+static DecodeStatus DecodeCapRegisterClass(MCInst *Inst, unsigned RegNo,
+                                           uint64_t Address,
+                                           const void *Decoder);
+static DecodeStatus DecodePCRelLabel17Scale16(MCInst *Inst, unsigned Imm,
+                                               uint64_t Address,
+                                               const void *Decoder);
+static DecodeStatus DecodeMorelloCapSystemRegister(MCInst *Inst, unsigned Imm,
+                                                   uint64_t Address,
+                                                   const void *Decoder);
+static DecodeStatus DecodeScbndsImm(MCInst *Inst, unsigned Imm, uint64_t Addr,
+                                    const void *Decoder);
+static DecodeStatus DecodeSealForm(MCInst *Inst, unsigned Imm,
+                                   uint64_t Address,
+                                   const void *Decoder);
+static DecodeStatus DecodeCAdrInstruction(MCInst *Inst, uint32_t insn,
+                                         uint64_t Address, const void *Decoder);
 
 static bool Check(DecodeStatus *Out, DecodeStatus In)
 {
@@ -255,13 +279,19 @@ static DecodeStatus _getInstruction(cs_struct *ud, MCInst *MI,
 		insn = ((uint32_t) code[3] << 24) | (code[2] << 16) |
 			(code[1] <<  8) | (code[0] <<  0);
 
+	// try Morello decode tables first
+	result = decodeInstruction_4(DecoderTableAArch64MorelloC6432, MI, insn, Address);	
+	if(result == MCDisassembler_Fail){
+		result = decodeInstruction_4(DecoderTableAArch64Morello32, MI, insn, Address);	
+	}
 	// Calling the auto-generated decoder function.
-	result = decodeInstruction_4(DecoderTable32, MI, insn, Address);
+	if(result == MCDisassembler_Fail){
+		result = decodeInstruction_4(DecoderTable32, MI, insn, Address);
+	}
 	// If Decoding fails initially, try Fallback table.
 	if(result == MCDisassembler_Fail){
 		result = decodeInstruction_4(DecoderTableFallback32, MI, insn, Address);	
 	}
-
 	// Init new MCOperand to be used in switch below.
 	// Kind RegVal set inside a case when needed.
 	MCOperand op_storage;
@@ -1029,6 +1059,132 @@ static DecodeStatus DecodeDDDDRegisterClass(MCInst *Inst, unsigned RegNo,
 
 	return Success;
 }
+
+// Morello Decode
+static const unsigned CapDecoderTable[] = {
+    AArch64_C0,   AArch64_C1,   AArch64_C2,   AArch64_C3,   AArch64_C4,
+    AArch64_C5,   AArch64_C6,   AArch64_C7,   AArch64_C8,   AArch64_C9,
+    AArch64_C10,  AArch64_C11,  AArch64_C12,  AArch64_C13,  AArch64_C14,
+    AArch64_C15,  AArch64_C16,  AArch64_C17,  AArch64_C18,  AArch64_C19,
+    AArch64_C20,  AArch64_C21,  AArch64_C22,  AArch64_C23,  AArch64_C24,
+    AArch64_C25,  AArch64_C26,  AArch64_C27,  AArch64_C28,  AArch64_CFP,
+    AArch64_CLR,  AArch64_CZR,  AArch64_CSP
+};
+
+static bool Has16CapabilityRegisters(const void *Decoder) {
+  /*const AArch64Disassembler *Dis = (const AArch64Disassembler *)(Decoder);*/
+  return AArch64_getFeatureBits(AArch64_FeatureUse16CapRegs);
+}
+
+static DecodeStatus DecodeCapRegisterClass(MCInst *Inst, unsigned RegNo,
+                                           uint64_t Addr, const void *Decoder) {
+  if (RegNo > 31)
+    return Fail;
+
+  if (Has16CapabilityRegisters(Decoder) && RegNo > 7 && RegNo < 24)
+    return Fail;
+
+  unsigned Register = CapDecoderTable[RegNo];
+  MCOperand_CreateReg0(Inst, Register);
+  return Success;
+}
+
+static DecodeStatus DecodeCapspRegisterClass(MCInst *Inst, unsigned RegNo,
+                                             uint64_t Addr,
+                                             const void *Decoder) {
+  if (RegNo > 31)
+    return Fail;
+
+  if (Has16CapabilityRegisters(Decoder) && RegNo > 7 && RegNo < 24)
+    return Fail;
+
+  unsigned Register = CapDecoderTable[RegNo];
+  if (Register == AArch64_CZR)
+    Register = AArch64_CSP;
+  MCOperand_CreateReg0(Inst, Register);
+  return Success;
+}
+
+static DecodeStatus DecodeCAddSubImmInstruction(MCInst *Inst,
+                                                uint32_t insn, uint64_t Addr,
+                                                const void *Decoder) {
+  unsigned Cd = fieldFromInstruction_4(insn, 0, 5);
+  unsigned Cn = fieldFromInstruction_4(insn, 5, 5);
+  unsigned Imm = fieldFromInstruction_4(insn, 10, 12);
+  unsigned Shift = fieldFromInstruction_4(insn, 22, 2);
+
+  if (DecodeCapspRegisterClass(Inst, Cd, Addr, Decoder) != Success)
+    return Fail;
+  
+  if (DecodeCapspRegisterClass(Inst, Cn, Addr, Decoder) != Success)
+    return Fail;
+
+  MCOperand_CreateImm0(Inst, Imm);
+  MCOperand_CreateImm0(Inst, (Shift & 0x1) * 12);
+
+  return Success;
+}
+
+static DecodeStatus DecodeMorelloCapSystemRegister(MCInst *Inst, unsigned Imm,
+                                                   uint64_t Address,
+                                                   const void *Decoder) {
+  Imm |= (1 << 15);
+  MCOperand_CreateImm0(Inst, Imm);
+
+  return Success;
+}
+
+static DecodeStatus DecodeScbndsImm(MCInst *Inst, unsigned Imm, uint64_t Addr,
+                                    const void *Decoder) {
+  uint64_t ImmVal = Imm & ~(1UL << 6);
+  uint64_t ShiftVal = (Imm & (1UL << 6)) >> 6;
+
+  MCOperand_CreateImm0(Inst, ImmVal);
+  MCOperand_CreateImm0(Inst, 4 * ShiftVal);
+  return Success;
+}
+
+static DecodeStatus DecodeSealForm(MCInst *Inst, unsigned Imm,
+                                   uint64_t Addr, const void *Decoder) {
+  if (!Imm)
+    return Fail;
+
+  MCOperand_CreateImm0(Inst, Imm);
+  return Success;
+}
+
+static DecodeStatus DecodePCRelLabel17Scale16(MCInst *Inst, unsigned Imm,
+                                               uint64_t Addr,
+                                               const void *Decoder) {
+	int64_t ImmVal = Imm;
+
+	// Sign-extend 17-bit immediate.
+	if (ImmVal & (1 << (17 - 1)))
+		ImmVal |= ~((1LL << 17) - 1);
+
+	MCOperand_CreateImm0(Inst, ImmVal);
+
+	return Success;
+}
+
+static DecodeStatus DecodeCAdrInstruction(MCInst *Inst, uint32_t insn,
+                                          uint64_t Addr, const void *Decoder) {
+  unsigned Cd = fieldFromInstruction_4(insn, 0, 5);
+  int64_t imm = fieldFromInstruction_4(insn, 5, 18) << 2;
+  unsigned IsPCRel = fieldFromInstruction_4(insn, 23, 1);
+  imm |= fieldFromInstruction_4(insn, 29, 2);
+
+  // Sign-extend the 20-bit immediate.
+  if (IsPCRel && (imm & (1 << (20 - 1))))
+    imm |= ~((1LL << 20) - 1);
+
+  DecodeCapRegisterClass(Inst, Cd, Addr, Decoder);
+  //if (!Dis->tryAddingSymbolicOperand(Inst, imm, Addr, Fail, 0, 4))
+  MCOperand_CreateImm0(Inst, imm);
+
+  return Success;
+}
+
 
 static DecodeStatus DecodeFixedPointScaleImm32(MCInst *Inst, unsigned Imm,
 		uint64_t Addr, const void *Decoder)
