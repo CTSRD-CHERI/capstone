@@ -6535,6 +6535,531 @@
 },
 
 {
+	AArch64_AltCapLoadAcq, ARM64_INS_LDAR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltCapStoreRel, ARM64_INS_STLR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadByteAcq, ARM64_INS_LDARB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadByteImmPre, ARM64_INS_LDRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadByteImmUnscaled, ARM64_INS_LDRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadByteRegExtW, ARM64_INS_LDRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadByteRegExtX, ARM64_INS_LDRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadCapImmPre, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadCapRegExtW, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadCapRegExtX, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadCapabilityImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadDFPRegExtW, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadDFPRegExtX, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadDWordImmPre, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadDWordImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadDWordRegExtW, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadDWordRegExtX, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadFPByteImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadFPDoubleImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadFPHalfImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadFPQuadImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadFPSingleImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadHalfImmUnscaled, ARM64_INS_LDRH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadHalfwordRegExtW, ARM64_INS_LDRH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadHalfwordRegExtX, ARM64_INS_LDRH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSFPRegExtW, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSFPRegExtX, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSWordRegExtW, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSWordRegExtX, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSignedByteDRegExtW, ARM64_INS_LDRSB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSignedByteDRegExtX, ARM64_INS_LDRSB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSignedByteSRegExtW, ARM64_INS_LDRSB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSignedByteSRegExtX, ARM64_INS_LDRSB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSignedByteToDWordImmUnscaled, ARM64_INS_LDRSB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSignedByteToWordImmUnscaled, ARM64_INS_LDRSB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSignedHalfToDWordImmUnscaled, ARM64_INS_LDRSH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSignedHalfToWordImmUnscaled, ARM64_INS_LDRSH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSignedHalfwordDRegExtW, ARM64_INS_LDRSH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSignedHalfwordDRegExtX, ARM64_INS_LDRSH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSignedHalfwordSRegExtW, ARM64_INS_LDRSH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSignedHalfwordSRegExtX, ARM64_INS_LDRSH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadSignedWordToDWordImmUnscaled, ARM64_INS_LDRSW,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadWordAcq, ARM64_INS_LDAR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadWordImmPre, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltLoadWordImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreByteImmPre, ARM64_INS_STRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreByteImmUnscaled, ARM64_INS_STRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreByteRegExtW, ARM64_INS_STRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreByteRegExtX, ARM64_INS_STRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreByteRel, ARM64_INS_STLRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreCapImmPre, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreCapRegExtW, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreCapRegExtX, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreCapabilityImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreDFPRegExtW, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreDFPRegExtX, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreDWordImmPre, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreDWordImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreDWordRegExtW, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreDWordRegExtX, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreFPByteImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreFPDoubleImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreFPHalfImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreFPQuadImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreFPSingleImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreHalfImmUnscaled, ARM64_INS_STRH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreHalfwordRegExtW, ARM64_INS_STRH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreHalfwordRegExtX, ARM64_INS_STRH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreSFPRegExtW, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreSFPRegExtX, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreSWordRegExtW, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreSWordRegExtX, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreWordImmPre, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreWordImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_AltStoreWordRel, ARM64_INS_STLR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
 	AArch64_B, ARM64_INS_B,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { ARM64_GRP_JUMP, ARM64_GRP_BRANCH_RELATIVE, 0 }, 1, 0
@@ -10211,6 +10736,867 @@
 
 {
 	AArch64_CTERMNE_XX, ARM64_INS_CTERMNE,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapAddImm, ARM64_INS_ADD,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapAddRegW, ARM64_INS_ADD,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapAddRegX, ARM64_INS_ADD,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapAlignDown, ARM64_INS_ALIGND,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapAlignUp, ARM64_INS_ALIGNU,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapBicImm, ARM64_INS_BICFLGS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapBicReg, ARM64_INS_BICFLGS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapBranch, ARM64_INS_BR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapBranchDirect, ARM64_INS_BRS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapBranchExchange4, ARM64_INS_BX,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapBranchLink, ARM64_INS_BLR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapBranchLinkDirect, ARM64_INS_BLRS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapBranchLinkRestricted, ARM64_INS_BLRR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapBranchLinkSealed, ARM64_INS_BLRS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapBranchRestricted, ARM64_INS_BRR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapBranchSealed, ARM64_INS_BRS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapBuildCap, ARM64_INS_BUILD,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapCheckEquals, ARM64_INS_CHKEQ,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapCheckSealed, ARM64_INS_CHKSLD,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapCheckSubset, ARM64_INS_CHKSS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapCheckSubsetUnseal, ARM64_INS_CHKSSU,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapCheckTagged, ARM64_INS_CHKTGD,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapClearPerm, ARM64_INS_CLRPERM,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapClearPermImm, ARM64_INS_CLRPERM,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapClearTag, ARM64_INS_CLRTAG,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapCompareSwap, ARM64_INS_CAS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapCompareSwapAcq, ARM64_INS_CASA,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapCompareSwapAcqRel, ARM64_INS_CASAL,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapCompareSwapRel, ARM64_INS_CASL,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapCondSel, ARM64_INS_CSEL,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapConvert64ToCapDDC, ARM64_INS_CVTD,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapConvert64ToCapDDCNullCheck, ARM64_INS_CVTDZ,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapConvert64ToCapPCC, ARM64_INS_CVTP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapConvert64ToCapPCCNullCheck, ARM64_INS_CVTPZ,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapConvert64toCap, ARM64_INS_CVT,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapConvert64toCapNullCheck, ARM64_INS_CVTZ,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapConvertCapTo64, ARM64_INS_CVT,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapConvertCapTo64DDC, ARM64_INS_CVTD,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapConvertCapTo64PCC, ARM64_INS_CVTP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapCopy, ARM64_INS_CPY,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapCopyFromHigh, ARM64_INS_CFHI,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapCopyToHigh, ARM64_INS_CTHI,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapEorImm, ARM64_INS_EORFLGS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapEorReg, ARM64_INS_EORFLGS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapGetBase, ARM64_INS_GCBASE,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapGetFlags, ARM64_INS_GCFLGS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapGetLen, ARM64_INS_GCLEN,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapGetLimit, ARM64_INS_GCLIM,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapGetOffset, ARM64_INS_GCOFF,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapGetPerm, ARM64_INS_GCPERM,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapGetSeal, ARM64_INS_GCSEAL,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapGetSys, ARM64_INS_MRS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapGetTag, ARM64_INS_GCTAG,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapGetType, ARM64_INS_GCTYPE,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapGetValue, ARM64_INS_GCVALUE,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadAcq, ARM64_INS_LDAR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadAcqPR, ARM64_INS_LDAPR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadBranchIndirect, ARM64_INS_BR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadBranchLinkIndirect, ARM64_INS_BLR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadEx, ARM64_INS_LDXR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadExAcq, ARM64_INS_LDAXR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadExPair, ARM64_INS_LDXP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadExPairAcq, ARM64_INS_LDAXP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadImmPost, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadImmPre, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadImmPreW, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadLiteral, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadPairBranch, ARM64_INS_LDPBR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadPairBranchLink, ARM64_INS_LDPBLR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadPairImmPost, ARM64_INS_LDP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadPairImmPre, ARM64_INS_LDP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadPairImmPreW, ARM64_INS_LDP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadPairNonTemporal, ARM64_INS_LDNP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadRegExtW, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadRegExtX, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadTags, ARM64_INS_LDCT,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadUnpriv, ARM64_INS_LDTR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapLoadUnscaledImm, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapOrImm, ARM64_INS_ORRFLGS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapOrrReg, ARM64_INS_ORRFLGS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapReturn, ARM64_INS_RET,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapReturnDirect, ARM64_INS_RETS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapReturnRestricted, ARM64_INS_RETR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapReturnSealed, ARM64_INS_RETS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapRoundRepresentableLength, ARM64_INS_RRLEN,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapRoundRepresentableMask, ARM64_INS_RRMASK,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSeal, ARM64_INS_SEAL,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSealCond, ARM64_INS_CSEAL,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSealImm, ARM64_INS_SEAL,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSetBounds, ARM64_INS_SCBNDS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSetBoundsExact, ARM64_INS_SCBNDSE,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSetBoundsImm, ARM64_INS_SCBNDS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSetFlags, ARM64_INS_SCFLGS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSetOffset, ARM64_INS_SCOFF,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSetSys, ARM64_INS_MSR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSetTagPriv, ARM64_INS_SCTAG,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSetValue, ARM64_INS_SCVALUE,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSetValueFromType, ARM64_INS_CPYTYPE,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSetValueFromValue, ARM64_INS_CPYVALUE,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStoreEx, ARM64_INS_STXR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStoreExPair, ARM64_INS_STXP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStoreExPairRel, ARM64_INS_STLXP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStoreExRel, ARM64_INS_STLXR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStoreImmPost, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStoreImmPre, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStoreImmPreW, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStorePairImmPost, ARM64_INS_STP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStorePairImmPre, ARM64_INS_STP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStorePairImmPreW, ARM64_INS_STP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStorePairNonTemporal, ARM64_INS_STNP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStoreRegExtW, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStoreRegExtX, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStoreRel, ARM64_INS_STLR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStoreTagsPriv, ARM64_INS_STCT,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStoreUnpriv, ARM64_INS_STTR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapStoreUnscaledImm, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSubImm, ARM64_INS_SUB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSubSetFlags, ARM64_INS_CMP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSwap, ARM64_INS_SWP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSwapAcq, ARM64_INS_SWPA,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSwapAcqRel, ARM64_INS_SWPAL,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapSwapRel, ARM64_INS_SWPL,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_CapUnseal, ARM64_INS_UNSEAL,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
@@ -25184,6 +26570,832 @@
 
 {
 	AArch64_PADRP, ARM64_INS_ADRP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltCapLoadAcq, ARM64_INS_LDAR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltCapStoreRel, ARM64_INS_STLR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadByteAcq, ARM64_INS_LDARB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadByteImmPre, ARM64_INS_LDRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadByteImmUnscaled, ARM64_INS_LDRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadByteRegExtW, ARM64_INS_LDRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadByteRegExtX, ARM64_INS_LDRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadCapImmPre, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadCapRegExtW, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadCapRegExtX, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadCapabilityImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadDFPRegExtW, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadDFPRegExtX, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadDWordImmPre, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadDWordImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadDWordRegExtW, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadDWordRegExtX, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadFPByteImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadFPDoubleImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadFPHalfImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadFPQuadImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadFPSingleImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadHalfImmUnscaled, ARM64_INS_LDRH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadHalfwordRegExtW, ARM64_INS_LDRH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadHalfwordRegExtX, ARM64_INS_LDRH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSFPRegExtW, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSFPRegExtX, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSWordRegExtW, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSWordRegExtX, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSignedByteDRegExtW, ARM64_INS_LDRSB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSignedByteDRegExtX, ARM64_INS_LDRSB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSignedByteSRegExtW, ARM64_INS_LDRSB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSignedByteSRegExtX, ARM64_INS_LDRSB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSignedByteToDWordImmUnscaled, ARM64_INS_LDRSB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSignedByteToWordImmUnscaled, ARM64_INS_LDRSB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSignedHalfToDWordImmUnscaled, ARM64_INS_LDRSH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSignedHalfToWordImmUnscaled, ARM64_INS_LDRSH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSignedHalfwordDRegExtW, ARM64_INS_LDRSH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSignedHalfwordDRegExtX, ARM64_INS_LDRSH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSignedHalfwordSRegExtW, ARM64_INS_LDRSH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSignedHalfwordSRegExtX, ARM64_INS_LDRSH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadSignedWordToDWordImmUnscaled, ARM64_INS_LDRSW,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadWordAcq, ARM64_INS_LDAR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadWordImmPre, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltLoadWordImmUnscaled, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreByteImmPre, ARM64_INS_STRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreByteImmUnscaled, ARM64_INS_STRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreByteRegExtW, ARM64_INS_STRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreByteRegExtX, ARM64_INS_STRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreByteRel, ARM64_INS_STLRB,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreCapImmPre, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreCapRegExtW, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreCapRegExtX, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreCapabilityImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreDFPRegExtW, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreDFPRegExtX, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreDWordImmPre, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreDWordImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreDWordRegExtW, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreDWordRegExtX, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreFPByteImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreFPDoubleImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreFPHalfImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreFPQuadImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreFPSingleImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreHalfImmUnscaled, ARM64_INS_STRH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreHalfwordRegExtW, ARM64_INS_STRH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreHalfwordRegExtX, ARM64_INS_STRH,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreSFPRegExtW, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreSFPRegExtX, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreSWordRegExtW, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreSWordRegExtX, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreWordImmPre, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreWordImmUnscaled, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PAltStoreWordRel, ARM64_INS_STLR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapCompareSwap, ARM64_INS_CAS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapCompareSwapAcq, ARM64_INS_CASA,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapCompareSwapAcqRel, ARM64_INS_CASAL,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapCompareSwapRel, ARM64_INS_CASL,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadAcq, ARM64_INS_LDAR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadAcqPR, ARM64_INS_LDAPR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadEx, ARM64_INS_LDXR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadExAcq, ARM64_INS_LDAXR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadExPair, ARM64_INS_LDXP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadExPairAcq, ARM64_INS_LDAXP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadImmPost, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadImmPre, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadImmPreW, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadPairImmPost, ARM64_INS_LDP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadPairImmPre, ARM64_INS_LDP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadPairImmPreW, ARM64_INS_LDP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadPairNonTemporal, ARM64_INS_LDNP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadRegExtW, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadRegExtX, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadTags, ARM64_INS_LDCT,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadUnpriv, ARM64_INS_LDTR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapLoadUnscaledImm, ARM64_INS_LDR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStoreEx, ARM64_INS_STXR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStoreExPair, ARM64_INS_STXP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStoreExPairRel, ARM64_INS_STLXP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStoreExRel, ARM64_INS_STLXR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStoreImmPost, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStoreImmPre, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStoreImmPreW, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStorePairImmPost, ARM64_INS_STP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStorePairImmPre, ARM64_INS_STP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStorePairImmPreW, ARM64_INS_STP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStorePairNonTemporal, ARM64_INS_STNP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStoreRegExtW, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStoreRegExtX, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStoreRel, ARM64_INS_STLR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStoreTagsPriv, ARM64_INS_STCT,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStoreUnpriv, ARM64_INS_STTR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapStoreUnscaledImm, ARM64_INS_STR,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapSwap, ARM64_INS_SWP,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapSwapAcq, ARM64_INS_SWPA,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapSwapAcqRel, ARM64_INS_SWPAL,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_PCapSwapRel, ARM64_INS_SWPL,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif

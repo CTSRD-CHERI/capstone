@@ -3,12 +3,12 @@
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013-2019 */
 
 
-{	/* AArch64_RDFFR_P,       AArch64_INS_RDFFR: rdffr */
+{	/* AArch64_RDFFR_P,        AArch64_INS_RDFFR: rdffr */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_RDFFR_PPz,       AArch64_INS_RDFFR: rdffr */
+{	/* AArch64_RDFFR_PPz,        AArch64_INS_RDFFR: rdffr */
 	0,
 	{ 0 }
 },

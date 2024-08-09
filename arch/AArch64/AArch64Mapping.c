@@ -17,7 +17,10 @@
 // NOTE: this reg_name_maps[] reflects the order of registers in arm64_reg
 static const char * const reg_name_maps[] = {
 	NULL, /* ARM64_REG_INVALID */
-
+	"cfp",
+	"clr",
+	"csp",
+	"czr"
 	"ffr",
   	"fp",
   	"lr",
@@ -62,6 +65,36 @@ static const char * const reg_name_maps[] = {
   	"b29",
   	"b30",
   	"b31",
+
+  	"c0",
+  	"c1",
+  	"c2",
+  	"c3",
+  	"c4",
+  	"c5",
+  	"c6",
+  	"c7",
+  	"c8",
+  	"c9",
+  	"c10",
+  	"c11",
+  	"c12",
+  	"c13",
+  	"c14",
+  	"c15",
+  	"c16",
+  	"c17",
+  	"c18",
+  	"c19",
+  	"c20",
+  	"c21",
+  	"c22",
+  	"c23",
+  	"c24",
+  	"c25",
+  	"c26",
+  	"c27",
+  	"c28",
 
   	"d0",
   	"d1",
