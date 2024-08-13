@@ -20,7 +20,7 @@ static const char * const reg_name_maps[] = {
 	"cfp",
 	"clr",
 	"csp",
-	"czr"
+	"czr",
 	"ffr",
   	"fp",
   	"lr",
@@ -889,7 +889,7 @@ void AArch64_reg_access(const cs_insn *insn,
 					write_count++;
 				}
 				break;
-			case ARM_OP_MEM:
+			case ARM64_OP_MEM:
 				// registers appeared in memory references always being read
 				if ((op->mem.base != ARM64_REG_INVALID) && !arr_exist(regs_read, read_count, op->mem.base)) {
 					regs_read[read_count] = (uint16_t)op->mem.base;
