@@ -4526,14 +4526,14 @@
 },
 
 {
-	AArch64_ASRVWr, ARM64_INS_ASR,
+	AArch64_ASRVWr, ARM64_INS_ASRV,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
 },
 
 {
-	AArch64_ASRVXr, ARM64_INS_ASR,
+	AArch64_ASRVXr, ARM64_INS_ASRV,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
@@ -24987,14 +24987,14 @@
 },
 
 {
-	AArch64_LSLVWr, ARM64_INS_LSL,
+	AArch64_LSLVWr, ARM64_INS_LSLV,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
 },
 
 {
-	AArch64_LSLVXr, ARM64_INS_LSL,
+	AArch64_LSLVXr, ARM64_INS_LSLV,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
@@ -25155,14 +25155,14 @@
 },
 
 {
-	AArch64_LSRVWr, ARM64_INS_LSR,
+	AArch64_LSRVWr, ARM64_INS_LSRV,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
 },
 
 {
-	AArch64_LSRVXr, ARM64_INS_LSR,
+	AArch64_LSRVXr, ARM64_INS_LSRV,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
@@ -25701,14 +25701,14 @@
 },
 
 {
-	AArch64_MOVNWi, ARM64_INS_MOV,
+	AArch64_MOVNWi, ARM64_INS_MOVN,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
 },
 
 {
-	AArch64_MOVNXi, ARM64_INS_MOV,
+	AArch64_MOVNXi, ARM64_INS_MOVN,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
@@ -25778,14 +25778,14 @@
 },
 
 {
-	AArch64_MOVZWi, ARM64_INS_MOV,
+	AArch64_MOVZWi, ARM64_INS_MOVZ,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
 },
 
 {
-	AArch64_MOVZXi, ARM64_INS_MOV,
+	AArch64_MOVZXi, ARM64_INS_MOVZ,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
@@ -28361,14 +28361,14 @@
 },
 
 {
-	AArch64_RORVWr, ARM64_INS_ROR,
+	AArch64_RORVWr, ARM64_INS_RORV,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
 },
 
 {
-	AArch64_RORVXr, ARM64_INS_ROR,
+	AArch64_RORVXr, ARM64_INS_RORV,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
@@ -41444,28 +41444,28 @@
 },
 
 {
-	AArch64_UMOVvi32, ARM64_INS_MOV,
+	AArch64_UMOVvi32, ARM64_INS_UMOV,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { ARM64_GRP_NEON, 0 }, 0, 0
 #endif
 },
 
 {
-	AArch64_UMOVvi32_idx0, ARM64_INS_MOV,
+	AArch64_UMOVvi32_idx0, ARM64_INS_UMOV,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
 },
 
 {
-	AArch64_UMOVvi64, ARM64_INS_MOV,
+	AArch64_UMOVvi64, ARM64_INS_UMOV,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { ARM64_GRP_NEON, 0 }, 0, 0
 #endif
 },
 
 {
-	AArch64_UMOVvi64_idx0, ARM64_INS_MOV,
+	AArch64_UMOVvi64_idx0, ARM64_INS_UMOV,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
@@ -45234,5 +45234,33 @@
 	AArch64_ZIP2v8i8, ARM64_INS_ZIP2,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { ARM64_GRP_NEON, 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_anonymous_16356, ARM64_INS_BFMOPS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_anonymous_16357, ARM64_INS_FMOPS,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_anonymous_5551, ARM64_INS_BFMOPA,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
+#endif
+},
+
+{
+	AArch64_anonymous_5552, ARM64_INS_FMOPA,
+#ifndef CAPSTONE_DIET
+	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif
 },

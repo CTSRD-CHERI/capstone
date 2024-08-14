@@ -83,6 +83,9 @@ def extract_matcher(filename):
                 break
             else:
                 _arch, mnem, insn_id = extract_insn(line)
+                if 'Unscaled' in insn_id:
+                    mnem = mnem.replace('ldr', 'ldur')
+                    mnem = mnem.replace('str', 'stur')
                 # skip pseudo instructions
                 if not mnem.startswith('__'):
                     # PPC
@@ -92,9 +95,11 @@ def extract_matcher(filename):
                     if not first_insn:
                         arch, first_insn = _arch, insn_id
 
-                    # Morello insns don't follow the same naming convention
-                    if not insn_id in insn_id_list and (mnem.upper() in insn_id or 'Cap' in insn_id or 'Alt' in insn_id):
+                    if not insn_id in insn_id_list:
                         # save this
+                        insn_id_list[insn_id] = mnem
+                    # Use (likely) correct version of mnemonic
+                    if mnem.upper() in insn_id:
                         insn_id_list[insn_id] = mnem
 
     #return arch, first_insn, insn_id_list

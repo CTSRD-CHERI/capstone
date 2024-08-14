@@ -83,12 +83,17 @@ def extract_matcher(filename):
                 break
             else:
                 _arch, mnem, insn_id = extract_insn(line)
+                if 'Unscaled' in insn_id:
+                    mnem = mnem.replace('ldr', 'ldur')
+                    mnem = mnem.replace('str', 'stur')
                 # skip pseudo instructions
                 if not mnem.startswith('__'):
                     if not first_insn:
                         arch, first_insn = _arch, insn_id
                     if not insn_id in insn_id_list:
                         # save this
+                        insn_id_list[insn_id] = mnem
+                    if mnem.upper() in insn_id:
                         insn_id_list[insn_id] = mnem
 
     #return arch, first_insn, insn_id_list
@@ -124,7 +129,8 @@ def print_entry(arch, insn_id, mnem, mapping, mnem_can_be_wrong):
             tmp = tmp[1].strip()
             tmp = tmp.split(',')
             #print("insn2 = |%s|" %tmp.strip())
-            if tmp[0].strip() == insn:
+            name = tmp[0].strip()
+            if name == insn or name.replace('AArch64_', 'AArch64_A') == insn:
                 if not mnem_can_be_wrong:
                     if arch.upper() == 'ARM':
                         print('''
