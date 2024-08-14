@@ -280,9 +280,12 @@ static DecodeStatus _getInstruction(cs_struct *ud, MCInst *MI,
 			(code[1] <<  8) | (code[0] <<  0);
 
 	// try Morello decode tables first
-	result = decodeInstruction_4(DecoderTableAArch64MorelloC6432, MI, insn, Address);	
+	result = decodeInstruction_4(DecoderTableAArch64Morello32, MI, insn, Address);	
 	if(result == MCDisassembler_Fail){
-		result = decodeInstruction_4(DecoderTableAArch64Morello32, MI, insn, Address);	
+		result = decodeInstruction_4(DecoderTableAArch64MorelloC6432, MI, insn, Address);	
+	}
+	if(result == MCDisassembler_Fail){
+		result = decodeInstruction_4(DecoderTableAArch64C6432, MI, insn, Address);	
 	}
 	// Calling the auto-generated decoder function.
 	if(result == MCDisassembler_Fail){
@@ -1073,7 +1076,9 @@ static const unsigned CapDecoderTable[] = {
 
 static bool Has16CapabilityRegisters(const void *Decoder) {
   /*const AArch64Disassembler *Dis = (const AArch64Disassembler *)(Decoder);*/
-  return AArch64_getFeatureBits(AArch64_FeatureUse16CapRegs);
+  // Hacky: return false since capstone assumes all feature bits
+  return false;
+  /*return AArch64_getFeatureBits(AArch64_FeatureUse16CapRegs);*/
 }
 
 static DecodeStatus DecodeCapRegisterClass(MCInst *Inst, unsigned RegNo,
@@ -1463,16 +1468,27 @@ static DecodeStatus DecodeUnsignedLdStInstruction(MCInst *Inst,
 	unsigned Rt = fieldFromInstruction_4(insn, 0, 5);
 	unsigned Rn = fieldFromInstruction_4(insn, 5, 5);
 	unsigned offset = fieldFromInstruction_4(insn, 10, 12);
+	bool IsFatPtr = false;
 
 	switch (MCInst_getOpcode(Inst)) {
 		default:
 			return Fail;
-
+		case AArch64_APRFMui:
+			IsFatPtr = true;
 		case AArch64_PRFMui:
 			// Rt is an immediate in prefetch.
 			MCOperand_CreateImm0(Inst, Rt);
 			break;
 
+		case AArch64_ASTRBBui:
+		case AArch64_ALDRBBui:
+		case AArch64_ALDRSBWui:
+		case AArch64_ASTRHHui:
+		case AArch64_ALDRHHui:
+		case AArch64_ALDRSHWui:
+		case AArch64_ASTRWui:
+		case AArch64_ALDRWui:
+			IsFatPtr = true;
 		case AArch64_STRBBui:
 		case AArch64_LDRBBui:
 		case AArch64_LDRSBWui:
@@ -1484,6 +1500,12 @@ static DecodeStatus DecodeUnsignedLdStInstruction(MCInst *Inst,
 			DecodeGPR32RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
 
+		case AArch64_ALDRSBXui:
+		case AArch64_ALDRSHXui:
+		case AArch64_ALDRSWui:
+		case AArch64_ASTRXui:
+		case AArch64_ALDRXui:
+			IsFatPtr = true;
 		case AArch64_LDRSBXui:
 		case AArch64_LDRSHXui:
 		case AArch64_LDRSWui:
@@ -1492,33 +1514,52 @@ static DecodeStatus DecodeUnsignedLdStInstruction(MCInst *Inst,
 			DecodeGPR64RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
 
+		case AArch64_ALDRQui:
+		case AArch64_ASTRQui:
+			IsFatPtr = true;
 		case AArch64_LDRQui:
 		case AArch64_STRQui:
 			DecodeFPR128RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
 
+		case AArch64_ALDRDui:
+		case AArch64_ASTRDui:
+			IsFatPtr = true;
 		case AArch64_LDRDui:
 		case AArch64_STRDui:
 			DecodeFPR64RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
 
+		case AArch64_ALDRSui:
+		case AArch64_ASTRSui:
+			IsFatPtr = true;
 		case AArch64_LDRSui:
 		case AArch64_STRSui:
 			DecodeFPR32RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
 
+		case AArch64_ALDRHui:
+		case AArch64_ASTRHui:
+			IsFatPtr = true;
 		case AArch64_LDRHui:
 		case AArch64_STRHui:
 			DecodeFPR16RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
 
+		case AArch64_ALDRBui:
+		case AArch64_ASTRBui:
+			IsFatPtr = true;
 		case AArch64_LDRBui:
 		case AArch64_STRBui:
 			DecodeFPR8RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
 	}
 
-	DecodeGPR64spRegisterClass(Inst, Rn, Addr, Decoder);
+	if (IsFatPtr){
+		if (DecodeCapspRegisterClass(Inst, Rn, Addr, Decoder) != Success)
+			return Fail;
+	} else
+		DecodeGPR64spRegisterClass(Inst, Rn, Addr, Decoder);
 
 	//if (!Dis->tryAddingSymbolicOperand(Inst, offset, Addr, Fail, 0, 4))
 	MCOperand_CreateImm0(Inst, offset);
@@ -1539,11 +1580,62 @@ static DecodeStatus DecodeSignedLdStInstruction(MCInst *Inst,
 	if (offset & (1 << (9 - 1)))
 		offset |= ~((1LL << 9) - 1);
 
+	bool UseFatPtr = false;
+
 	// First operand is always the writeback to the address register, if needed.
 	switch (MCInst_getOpcode(Inst)) {
 		default:
 			break;
 
+		case AArch64_ALDRSBWpre:
+		case AArch64_ALDRSHWpre:
+		case AArch64_ASTRBBpre:
+		case AArch64_ALDRBBpre:
+		case AArch64_ASTRHHpre:
+		case AArch64_ALDRHHpre:
+		case AArch64_ASTRWpre:
+		case AArch64_ALDRWpre:
+		case AArch64_ALDRSBXpre:
+		case AArch64_ALDRSHXpre:
+		case AArch64_ASTRXpre:
+		case AArch64_ALDRSWpre:
+		case AArch64_ALDRXpre:
+		case AArch64_ALDRQpre:
+		case AArch64_ASTRQpre:
+		case AArch64_ALDRDpre:
+		case AArch64_ASTRDpre:
+		case AArch64_ALDRSpre:
+		case AArch64_ASTRSpre:
+		case AArch64_ALDRHpre:
+		case AArch64_ASTRHpre:
+		case AArch64_ALDRBpre:
+		case AArch64_ASTRBpre:
+		case AArch64_ALDRSBWpost:
+		case AArch64_ALDRSHWpost:
+		case AArch64_ASTRBBpost:
+		case AArch64_ALDRBBpost:
+		case AArch64_ASTRHHpost:
+		case AArch64_ALDRHHpost:
+		case AArch64_ASTRWpost:
+		case AArch64_ALDRWpost:
+		case AArch64_ALDRSBXpost:
+		case AArch64_ALDRSHXpost:
+		case AArch64_ASTRXpost:
+		case AArch64_ALDRSWpost:
+		case AArch64_ALDRXpost:
+		case AArch64_ALDRQpost:
+		case AArch64_ASTRQpost:
+		case AArch64_ALDRDpost:
+		case AArch64_ASTRDpost:
+		case AArch64_ALDRSpost:
+		case AArch64_ASTRSpost:
+		case AArch64_ALDRHpost:
+		case AArch64_ASTRHpost:
+		case AArch64_ALDRBpost:
+		case AArch64_ASTRBpost:
+			if (DecodeCapspRegisterClass(Inst, Rn, Addr, Decoder) != Success)
+			  return Fail;
+			break;
 		case AArch64_LDRSBWpre:
 		case AArch64_LDRSHWpre:
 		case AArch64_STRBBpre:
@@ -1598,11 +1690,46 @@ static DecodeStatus DecodeSignedLdStInstruction(MCInst *Inst,
 		default:
 			return Fail;
 
-		case AArch64_PRFUMi:
+		case AArch64_APRFUMi:
+			UseFatPtr = true;
 			// Rt is an immediate in prefetch.
+		case AArch64_PRFUMi:
 			MCOperand_CreateImm0(Inst, Rt);
 			break;
 
+		case AArch64_ALDRSBWpost:
+		case AArch64_ALDRSHWpost:
+		case AArch64_ASTRBBpost:
+		case AArch64_ALDRBBpost:
+		case AArch64_ASTRHHpost:
+		case AArch64_ALDRHHpost:
+		case AArch64_ASTRWpost:
+		case AArch64_ALDRWpost:
+		case AArch64_ALDRSBWpre:
+		case AArch64_ALDRSHWpre:
+		case AArch64_ASTRBBpre:
+		case AArch64_ALDRBBpre:
+		case AArch64_ASTRHHpre:
+		case AArch64_ALDRHHpre:
+		case AArch64_ASTRWpre:
+		case AArch64_ALDRWpre:
+		case AArch64_ASTURBBi:
+		case AArch64_ALDURBBi:
+		case AArch64_ALDURSBWi:
+		case AArch64_ASTURHHi:
+		case AArch64_ALDURHHi:
+		case AArch64_ALDURSHWi:
+		case AArch64_ASTURWi:
+		case AArch64_ALDURWi:
+		case AArch64_ALDTRSBWi:
+		case AArch64_ALDTRSHWi:
+		case AArch64_ASTTRWi:
+		case AArch64_ALDTRWi:
+		case AArch64_ASTTRHi:
+		case AArch64_ALDTRHi:
+		case AArch64_ALDTRBi:
+		case AArch64_ASTTRBi:
+		    UseFatPtr = true;
 		case AArch64_STURBBi:
 		case AArch64_LDURBBi:
 		case AArch64_LDURSBWi:
@@ -1646,6 +1773,27 @@ static DecodeStatus DecodeSignedLdStInstruction(MCInst *Inst,
 			DecodeGPR32RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
 
+		case AArch64_ALDRSBXpost:
+		case AArch64_ALDRSHXpost:
+		case AArch64_ASTRXpost:
+		case AArch64_ALDRSWpost:
+		case AArch64_ALDRXpost:
+		case AArch64_ALDRSBXpre:
+		case AArch64_ALDRSHXpre:
+		case AArch64_ASTRXpre:
+		case AArch64_ALDRSWpre:
+		case AArch64_ALDRXpre:
+		case AArch64_ALDURSBXi:
+		case AArch64_ALDURSHXi:
+		case AArch64_ALDURSWi:
+		case AArch64_ASTURXi:
+		case AArch64_ALDURXi:
+		case AArch64_ALDTRSBXi:
+		case AArch64_ALDTRSHXi:
+		case AArch64_ALDTRSWi:
+		case AArch64_ASTTRXi:
+		case AArch64_ALDTRXi:
+			UseFatPtr = true;
 		case AArch64_LDURSBXi:
 		case AArch64_LDURSHXi:
 		case AArch64_LDURSWi:
@@ -1674,6 +1822,13 @@ static DecodeStatus DecodeSignedLdStInstruction(MCInst *Inst,
 			DecodeGPR64RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
 
+		case AArch64_ALDRQpost:
+		case AArch64_ASTRQpost:
+		case AArch64_ALDRQpre:
+		case AArch64_ASTRQpre:
+		case AArch64_ALDURQi:
+		case AArch64_ASTURQi:
+			UseFatPtr = true;
 		case AArch64_LDURQi:
 		case AArch64_STURQi:
 		case AArch64_LDRQpre:
@@ -1683,6 +1838,13 @@ static DecodeStatus DecodeSignedLdStInstruction(MCInst *Inst,
 			DecodeFPR128RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
 
+		case AArch64_ALDRDpost:
+		case AArch64_ASTRDpost:
+		case AArch64_ALDRDpre:
+		case AArch64_ASTRDpre:
+		case AArch64_ALDURDi:
+		case AArch64_ASTURDi:
+			UseFatPtr = true;
 		case AArch64_LDURDi:
 		case AArch64_STURDi:
 		case AArch64_LDRDpre:
@@ -1692,6 +1854,13 @@ static DecodeStatus DecodeSignedLdStInstruction(MCInst *Inst,
 			DecodeFPR64RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
 
+		case AArch64_ALDRSpost:
+		case AArch64_ASTRSpost:
+		case AArch64_ALDRSpre:
+		case AArch64_ASTRSpre:
+		case AArch64_ALDURSi:
+		case AArch64_ASTURSi:
+			UseFatPtr = true;
 		case AArch64_LDURSi:
 		case AArch64_STURSi:
 		case AArch64_LDRSpre:
@@ -1701,6 +1870,13 @@ static DecodeStatus DecodeSignedLdStInstruction(MCInst *Inst,
 			DecodeFPR32RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
 
+		case AArch64_ALDRHpost:
+		case AArch64_ASTRHpost:
+		case AArch64_ALDRHpre:
+		case AArch64_ASTRHpre:
+		case AArch64_ALDURHi:
+		case AArch64_ASTURHi:
+			UseFatPtr = true;
 		case AArch64_LDURHi:
 		case AArch64_STURHi:
 		case AArch64_LDRHpre:
@@ -1710,6 +1886,13 @@ static DecodeStatus DecodeSignedLdStInstruction(MCInst *Inst,
 			DecodeFPR16RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
 
+		case AArch64_ALDRBpost:
+		case AArch64_ASTRBpost:
+		case AArch64_ALDRBpre:
+		case AArch64_ASTRBpre:
+		case AArch64_ALDURBi:
+		case AArch64_ASTURBi:
+			UseFatPtr = true;
 		case AArch64_LDURBi:
 		case AArch64_STURBi:
 		case AArch64_LDRBpre:
@@ -1720,7 +1903,10 @@ static DecodeStatus DecodeSignedLdStInstruction(MCInst *Inst,
 			break;
 	}
 
-	DecodeGPR64spRegisterClass(Inst, Rn, Addr, Decoder);
+	if (!UseFatPtr)
+		DecodeGPR64spRegisterClass(Inst, Rn, Addr, Decoder);
+	else if (DecodeCapspRegisterClass(Inst, Rn, Addr, Decoder) != Success)
+		return Fail;
 	MCOperand_CreateImm0(Inst, offset);
 
 	IsLoad = fieldFromInstruction_4(insn, 22, 1) != 0;
@@ -1742,11 +1928,65 @@ static DecodeStatus DecodeExclusiveLdStInstruction(MCInst *Inst,
 	unsigned Rt2 = fieldFromInstruction_4(insn, 10, 5);
 	unsigned Rs = fieldFromInstruction_4(insn, 16, 5);
 	unsigned Opcode = MCInst_getOpcode(Inst);
+	bool IsFatPtr = false;
 
+	switch (Opcode) {
+	default:
+		IsFatPtr = false;
+		break;
+	case AArch64_ASTLXRW:
+	case AArch64_ASTLXRB:
+	case AArch64_ASTLXRH:
+	case AArch64_ASTXRW:
+	case AArch64_ASTXRB:
+	case AArch64_ASTXRH:
+	case AArch64_ALDARW:
+	case AArch64_ALDARB:
+	case AArch64_ALDARH:
+	case AArch64_ALDAXRW:
+	case AArch64_ALDAXRB:
+	case AArch64_ALDAXRH:
+	case AArch64_ALDXRW:
+	case AArch64_ALDXRB:
+	case AArch64_ALDXRH:
+	case AArch64_ASTLRW:
+	case AArch64_ASTLRB:
+	case AArch64_ASTLRH:
+	case AArch64_ASTLLRW:
+	case AArch64_ASTLLRB:
+	case AArch64_ASTLLRH:
+	case AArch64_ALDLARW:
+	case AArch64_ALDLARB:
+	case AArch64_ALDLARH:
+	case AArch64_ASTLXRX:
+	case AArch64_ASTXRX:
+	case AArch64_ALDARX:
+	case AArch64_ALDAXRX:
+	case AArch64_ALDXRX:
+	case AArch64_ASTLRX:
+	case AArch64_ALDLARX:
+	case AArch64_ASTLLRX:
+	case AArch64_ASTLXPW:
+	case AArch64_ASTXPW:
+	case AArch64_ALDAXPW:
+	case AArch64_ALDXPW:
+	case AArch64_ASTLXPX:
+	case AArch64_ASTXPX:
+	case AArch64_ALDAXPX:
+	case AArch64_ALDXPX:
+	  IsFatPtr = true;
+	  break;
+	}
 	switch (Opcode) {
 		default:
 			return Fail;
 
+		case AArch64_ASTLXRW:
+		case AArch64_ASTLXRB:
+		case AArch64_ASTLXRH:
+		case AArch64_ASTXRW:
+		case AArch64_ASTXRB:
+		case AArch64_ASTXRH:
 		case AArch64_STLXRW:
 		case AArch64_STLXRB:
 		case AArch64_STLXRH:
@@ -1755,6 +1995,24 @@ static DecodeStatus DecodeExclusiveLdStInstruction(MCInst *Inst,
 		case AArch64_STXRH:
 			DecodeGPR32RegisterClass(Inst, Rs, Addr, Decoder);
 			// FALLTHROUGH
+		case AArch64_ALDARW:
+		case AArch64_ALDARB:
+		case AArch64_ALDARH:
+		case AArch64_ALDAXRW:
+		case AArch64_ALDAXRB:
+		case AArch64_ALDAXRH:
+		case AArch64_ALDXRW:
+		case AArch64_ALDXRB:
+		case AArch64_ALDXRH:
+		case AArch64_ASTLRW:
+		case AArch64_ASTLRB:
+		case AArch64_ASTLRH:
+		case AArch64_ASTLLRW:
+		case AArch64_ASTLLRB:
+		case AArch64_ASTLLRH:
+		case AArch64_ALDLARW:
+		case AArch64_ALDLARB:
+		case AArch64_ALDLARH:
 		case AArch64_LDARW:
 		case AArch64_LDARB:
 		case AArch64_LDARH:
@@ -1775,11 +2033,18 @@ static DecodeStatus DecodeExclusiveLdStInstruction(MCInst *Inst,
 		case AArch64_LDLARH:
 			DecodeGPR32RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
-
+		case AArch64_ASTLXRX:
+		case AArch64_ASTXRX:
 		case AArch64_STLXRX:
 		case AArch64_STXRX:
 			DecodeGPR32RegisterClass(Inst, Rs, Addr, Decoder);
 			// FALLTHROUGH
+		case AArch64_ALDARX:
+		case AArch64_ALDAXRX:
+		case AArch64_ALDXRX:
+		case AArch64_ASTLRX:
+		case AArch64_ALDLARX:
+		case AArch64_ASTLLRX:
 		case AArch64_LDARX:
 		case AArch64_LDAXRX:
 		case AArch64_LDXRX:
@@ -1789,20 +2054,28 @@ static DecodeStatus DecodeExclusiveLdStInstruction(MCInst *Inst,
 			DecodeGPR64RegisterClass(Inst, Rt, Addr, Decoder);
 			break;
 
+		case AArch64_ASTLXPW:
+		case AArch64_ASTXPW:
 		case AArch64_STLXPW:
 		case AArch64_STXPW:
 			DecodeGPR32RegisterClass(Inst, Rs, Addr, Decoder);
 			// FALLTHROUGH
+		case AArch64_ALDAXPW:
+		case AArch64_ALDXPW:
 		case AArch64_LDAXPW:
 		case AArch64_LDXPW:
 			DecodeGPR32RegisterClass(Inst, Rt, Addr, Decoder);
 			DecodeGPR32RegisterClass(Inst, Rt2, Addr, Decoder);
 			break;
 
+		case AArch64_ASTLXPX:
+		case AArch64_ASTXPX:
 		case AArch64_STLXPX:
 		case AArch64_STXPX:
 			DecodeGPR32RegisterClass(Inst, Rs, Addr, Decoder);
 			// FALLTHROUGH
+		case AArch64_ALDAXPX:
+		case AArch64_ALDXPX:
 		case AArch64_LDAXPX:
 		case AArch64_LDXPX:
 			DecodeGPR64RegisterClass(Inst, Rt, Addr, Decoder);
@@ -1810,11 +2083,17 @@ static DecodeStatus DecodeExclusiveLdStInstruction(MCInst *Inst,
 			break;
 	}
 
-	DecodeGPR64spRegisterClass(Inst, Rn, Addr, Decoder);
+	if (IsFatPtr) {
+		if (DecodeCapspRegisterClass(Inst, Rn, Addr, Decoder) != Success)
+			return Fail;
+	} else
+		DecodeGPR64spRegisterClass(Inst, Rn, Addr, Decoder);
 
 	// You shouldn't load to the same register twice in an instruction...
 	if ((Opcode == AArch64_LDAXPW || Opcode == AArch64_LDXPW ||
-		Opcode == AArch64_LDAXPX || Opcode == AArch64_LDXPX) &&
+		Opcode == AArch64_LDAXPX || Opcode == AArch64_LDXPX ||
+		Opcode == AArch64_ALDAXPW || Opcode == AArch64_ALDXPW ||
+		Opcode == AArch64_ALDAXPX || Opcode == AArch64_ALDXPX) &&
 		Rt == Rt2)
 		return SoftFail;
 
@@ -1831,6 +2110,7 @@ static DecodeStatus DecodePairLdStInstruction(MCInst *Inst, uint32_t insn,
 	bool IsLoad = fieldFromInstruction_4(insn, 22, 1) != 0;
 	unsigned Opcode = MCInst_getOpcode(Inst);
 	bool NeedsDisjointWritebackTransfer = false;
+	bool HasFatPointer = false;
 
 	// offset is a 7-bit signed immediate, so sign extend it to
 	// fill the unsigned.
@@ -1839,74 +2119,153 @@ static DecodeStatus DecodePairLdStInstruction(MCInst *Inst, uint32_t insn,
 
 	// First operand is always writeback of base register.
 	switch (Opcode) {
-		default:
-			break;
-
-		case AArch64_LDPXpost:
-		case AArch64_STPXpost:
-		case AArch64_LDPSWpost:
-		case AArch64_LDPXpre:
-		case AArch64_STPXpre:
-		case AArch64_LDPSWpre:
-		case AArch64_LDPWpost:
-		case AArch64_STPWpost:
-		case AArch64_LDPWpre:
-		case AArch64_STPWpre:
-		case AArch64_LDPQpost:
-		case AArch64_STPQpost:
-		case AArch64_LDPQpre:
-		case AArch64_STPQpre:
-		case AArch64_LDPDpost:
-		case AArch64_STPDpost:
-		case AArch64_LDPDpre:
-		case AArch64_STPDpre:
-		case AArch64_LDPSpost:
-		case AArch64_STPSpost:
-		case AArch64_LDPSpre:
-		case AArch64_STPSpre:
-			DecodeGPR64spRegisterClass(Inst, Rn, Addr, Decoder);
-			break;
+	default:
+	break;
+	case AArch64_ALDPXpre:
+	case AArch64_ASTPXpre:
+	case AArch64_ALDPWpre:
+	case AArch64_ASTPWpre:
+	case AArch64_ALDPQpre:
+	case AArch64_ASTPQpre:
+	case AArch64_ALDPDpre:
+	case AArch64_ASTPDpre:
+	case AArch64_ALDPSpre:
+	case AArch64_ASTPSpre:
+	case AArch64_ALDPSWpre:
+	case AArch64_ALDPXpost:
+	case AArch64_ASTPXpost:
+	case AArch64_ALDPSWpost:
+	case AArch64_ALDPWpost:
+	case AArch64_ASTPWpost:
+	case AArch64_ALDPQpost:
+	case AArch64_ASTPQpost:
+	case AArch64_ALDPDpost:
+	case AArch64_ASTPDpost:
+	case AArch64_ALDPSpost:
+	case AArch64_ASTPSpost:
+	if (DecodeCapspRegisterClass(Inst, Rn, Addr, Decoder) != Success)
+	return Fail;
+	// LLVM_FALLTHROUGH;
+	case AArch64_ALDNPXi:
+	case AArch64_ASTNPXi:
+	case AArch64_ALDNPWi:
+	case AArch64_ASTNPWi:
+	case AArch64_ALDNPQi:
+	case AArch64_ASTNPQi:
+	case AArch64_ALDNPDi:
+	case AArch64_ASTNPDi:
+	case AArch64_ALDNPSi:
+	case AArch64_ASTNPSi:
+	case AArch64_ALDPXi:
+	case AArch64_ASTPXi:
+	case AArch64_ALDPWi:
+	case AArch64_ASTPWi:
+	case AArch64_ALDPQi:
+	case AArch64_ASTPQi:
+	case AArch64_ALDPDi:
+	case AArch64_ASTPDi:
+	case AArch64_ALDPSi:
+	case AArch64_ASTPSi:
+	case AArch64_ALDPSWi:
+	HasFatPointer = true;
+	break;
+	case AArch64_LDPXpost:
+	case AArch64_STPXpost:
+	case AArch64_LDPSWpost:
+	case AArch64_LDPXpre:
+	case AArch64_STPXpre:
+	case AArch64_LDPSWpre:
+	case AArch64_LDPWpost:
+	case AArch64_STPWpost:
+	case AArch64_LDPWpre:
+	case AArch64_STPWpre:
+	case AArch64_LDPQpost:
+	case AArch64_STPQpost:
+	case AArch64_LDPQpre:
+	case AArch64_STPQpre:
+	case AArch64_LDPDpost:
+	case AArch64_STPDpost:
+	case AArch64_LDPDpre:
+	case AArch64_STPDpre:
+	case AArch64_LDPSpost:
+	case AArch64_STPSpost:
+	case AArch64_LDPSpre:
+	case AArch64_STPSpre:
+	case AArch64_STGPpre:
+	case AArch64_STGPpost:
+	DecodeGPR64spRegisterClass(Inst, Rn, Addr, Decoder);
+	break;
 	}
 
 	switch (Opcode) {
 		default:
 			return Fail;
 
+		case AArch64_ALDPXpost:
+		case AArch64_ASTPXpost:
+		case AArch64_ALDPSWpost:
+		case AArch64_ALDPXpre:
+		case AArch64_ASTPXpre:
+		case AArch64_ALDPSWpre:
 		case AArch64_LDPXpost:
 		case AArch64_STPXpost:
 		case AArch64_LDPSWpost:
 		case AArch64_LDPXpre:
 		case AArch64_STPXpre:
 		case AArch64_LDPSWpre:
+		case AArch64_STGPpre:
+		case AArch64_STGPpost:
 			NeedsDisjointWritebackTransfer = true;
 			// Fallthrough
+		case AArch64_ALDNPXi:
+		case AArch64_ASTNPXi:
 		case AArch64_LDNPXi:
 		case AArch64_STNPXi:
+		case AArch64_ALDPXi:
+		case AArch64_ASTPXi:
 		case AArch64_LDPXi:
 		case AArch64_STPXi:
+		case AArch64_ALDPSWi:
 		case AArch64_LDPSWi:
+		case AArch64_STGPi:
 			DecodeGPR64RegisterClass(Inst, Rt, Addr, Decoder);
 			DecodeGPR64RegisterClass(Inst, Rt2, Addr, Decoder);
 			break;
 
+		case AArch64_ALDPWpost:
+		case AArch64_ASTPWpost:
+		case AArch64_ALDPWpre:
+		case AArch64_ASTPWpre:
 		case AArch64_LDPWpost:
 		case AArch64_STPWpost:
 		case AArch64_LDPWpre:
 		case AArch64_STPWpre:
 			NeedsDisjointWritebackTransfer = true;
 			// Fallthrough
+		case AArch64_ALDNPWi:
+		case AArch64_ASTNPWi:
 		case AArch64_LDNPWi:
 		case AArch64_STNPWi:
+		case AArch64_ALDPWi:
+		case AArch64_ASTPWi:
 		case AArch64_LDPWi:
 		case AArch64_STPWi:
 			DecodeGPR32RegisterClass(Inst, Rt, Addr, Decoder);
 			DecodeGPR32RegisterClass(Inst, Rt2, Addr, Decoder);
 			break;
 
+		case AArch64_ALDNPQi:
+		case AArch64_ASTNPQi:
+		case AArch64_ALDPQpost:
+		case AArch64_ASTPQpost:
+		case AArch64_ALDPQpre:
+		case AArch64_ASTPQpre:
 		case AArch64_LDNPQi:
 		case AArch64_STNPQi:
 		case AArch64_LDPQpost:
 		case AArch64_STPQpost:
+		case AArch64_ALDPQi:
+		case AArch64_ASTPQi:
 		case AArch64_LDPQi:
 		case AArch64_STPQi:
 		case AArch64_LDPQpre:
@@ -1915,10 +2274,18 @@ static DecodeStatus DecodePairLdStInstruction(MCInst *Inst, uint32_t insn,
 			DecodeFPR128RegisterClass(Inst, Rt2, Addr, Decoder);
 			break;
 
+		case AArch64_ALDNPDi:
+		case AArch64_ASTNPDi:
+		case AArch64_ALDPDpost:
+		case AArch64_ASTPDpost:
+		case AArch64_ALDPDpre:
+		case AArch64_ASTPDpre:
 		case AArch64_LDNPDi:
 		case AArch64_STNPDi:
 		case AArch64_LDPDpost:
 		case AArch64_STPDpost:
+		case AArch64_ALDPDi:
+		case AArch64_ASTPDi:
 		case AArch64_LDPDi:
 		case AArch64_STPDi:
 		case AArch64_LDPDpre:
@@ -1927,10 +2294,18 @@ static DecodeStatus DecodePairLdStInstruction(MCInst *Inst, uint32_t insn,
 			DecodeFPR64RegisterClass(Inst, Rt2, Addr, Decoder);
 			break;
 
+		case AArch64_ALDNPSi:
+		case AArch64_ASTNPSi:
+		case AArch64_ALDPSpost:
+		case AArch64_ASTPSpost:
+		case AArch64_ALDPSpre:
+		case AArch64_ASTPSpre:
 		case AArch64_LDNPSi:
 		case AArch64_STNPSi:
 		case AArch64_LDPSpost:
 		case AArch64_STPSpost:
+		case AArch64_ALDPSi:
+		case AArch64_ASTPSi:
 		case AArch64_LDPSi:
 		case AArch64_STPSi:
 		case AArch64_LDPSpre:
@@ -1940,7 +2315,12 @@ static DecodeStatus DecodePairLdStInstruction(MCInst *Inst, uint32_t insn,
 			break;
 	}
 
-	DecodeGPR64spRegisterClass(Inst, Rn, Addr, Decoder);
+	if (HasFatPointer) {
+		if (DecodeCapspRegisterClass(Inst, Rn, Addr, Decoder) != Success)
+			return Fail;
+
+	} else
+		DecodeGPR64spRegisterClass(Inst, Rn, Addr, Decoder);
 	MCOperand_CreateImm0(Inst, offset);
 
 	// You shouldn't load to the same register twice in an instruction...
@@ -2046,6 +2426,16 @@ static DecodeStatus DecodeAddSubERegInstruction(MCInst *Inst,
 			DecodeGPR64RegisterClass(Inst, Rd, Addr, Decoder);
 			DecodeGPR64spRegisterClass(Inst, Rn, Addr, Decoder);
 			DecodeGPR64RegisterClass(Inst, Rm, Addr, Decoder);
+			break;
+		case AArch64_CapAddRegX:
+			DecodeCapspRegisterClass(Inst, Rd, Addr, Decoder);
+			DecodeCapspRegisterClass(Inst, Rn, Addr, Decoder);
+			DecodeGPR64RegisterClass(Inst, Rm, Addr, Decoder);
+			break;
+		case AArch64_CapAddRegW:
+			DecodeCapspRegisterClass(Inst, Rd, Addr, Decoder);
+			DecodeCapspRegisterClass(Inst, Rn, Addr, Decoder);
+			DecodeGPR32RegisterClass(Inst, Rm, Addr, Decoder);
 			break;
 	}
 
