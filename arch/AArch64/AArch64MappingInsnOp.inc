@@ -4120,7 +4120,7 @@
 
 {	/* AArch64_ASTPDi, AArch64_INS_STP: stp */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_ASTPDpost, AArch64_INS_STP: stp */
@@ -4688,7 +4688,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadByteImmUnscaled, AArch64_INS_LDRB: ldrb */
+{	/* AArch64_AltLoadByteImmUnscaled, AArch64_INS_LDURB: ldurb */
 	0,
 	{ 0 }
 },
@@ -4718,7 +4718,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadCapabilityImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_AltLoadCapabilityImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
@@ -4738,7 +4738,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadDWordImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_AltLoadDWordImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
@@ -4753,32 +4753,32 @@
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadFPByteImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_AltLoadFPByteImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadFPDoubleImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_AltLoadFPDoubleImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadFPHalfImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_AltLoadFPHalfImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadFPQuadImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_AltLoadFPQuadImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadFPSingleImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_AltLoadFPSingleImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadHalfImmUnscaled, AArch64_INS_LDRH: ldrh */
+{	/* AArch64_AltLoadHalfImmUnscaled, AArch64_INS_LDURH: ldurh */
 	0,
 	{ 0 }
 },
@@ -4833,22 +4833,22 @@
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadSignedByteToDWordImmUnscaled, AArch64_INS_LDRSB: ldrsb */
+{	/* AArch64_AltLoadSignedByteToDWordImmUnscaled, AArch64_INS_LDURSB: ldursb */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadSignedByteToWordImmUnscaled, AArch64_INS_LDRSB: ldrsb */
+{	/* AArch64_AltLoadSignedByteToWordImmUnscaled, AArch64_INS_LDURSB: ldursb */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadSignedHalfToDWordImmUnscaled, AArch64_INS_LDRSH: ldrsh */
+{	/* AArch64_AltLoadSignedHalfToDWordImmUnscaled, AArch64_INS_LDURSH: ldursh */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadSignedHalfToWordImmUnscaled, AArch64_INS_LDRSH: ldrsh */
+{	/* AArch64_AltLoadSignedHalfToWordImmUnscaled, AArch64_INS_LDURSH: ldursh */
 	0,
 	{ 0 }
 },
@@ -4873,7 +4873,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadSignedWordToDWordImmUnscaled, AArch64_INS_LDRSW: ldrsw */
+{	/* AArch64_AltLoadSignedWordToDWordImmUnscaled, AArch64_INS_LDURSW: ldursw */
 	0,
 	{ 0 }
 },
@@ -4888,7 +4888,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_AltLoadWordImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_AltLoadWordImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
@@ -4898,7 +4898,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_AltStoreByteImmUnscaled, AArch64_INS_STRB: strb */
+{	/* AArch64_AltStoreByteImmUnscaled, AArch64_INS_STURB: sturb */
 	0,
 	{ 0 }
 },
@@ -4933,7 +4933,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_AltStoreCapabilityImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_AltStoreCapabilityImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
@@ -4953,7 +4953,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_AltStoreDWordImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_AltStoreDWordImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
@@ -4968,32 +4968,32 @@
 	{ 0 }
 },
 
-{	/* AArch64_AltStoreFPByteImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_AltStoreFPByteImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_AltStoreFPDoubleImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_AltStoreFPDoubleImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_AltStoreFPHalfImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_AltStoreFPHalfImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_AltStoreFPQuadImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_AltStoreFPQuadImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_AltStoreFPSingleImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_AltStoreFPSingleImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_AltStoreHalfImmUnscaled, AArch64_INS_STRH: strh */
+{	/* AArch64_AltStoreHalfImmUnscaled, AArch64_INS_STURH: sturh */
 	0,
 	{ 0 }
 },
@@ -5033,7 +5033,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_AltStoreWordImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_AltStoreWordImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
@@ -7675,47 +7675,47 @@
 
 {	/* AArch64_CapAddImm, AArch64_INS_ADD: add */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapAddRegW, AArch64_INS_ADD: add */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapAddRegX, AArch64_INS_ADD: add */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapAlignDown, AArch64_INS_ALIGND: alignd */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapAlignUp, AArch64_INS_ALIGNU: alignu */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapBicImm, AArch64_INS_BICFLGS: bicflgs */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapBicReg, AArch64_INS_BICFLGS: bicflgs */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapBranch, AArch64_INS_BR: br */
 	0,
-	{ 0 }
+	{ CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapBranchDirect, AArch64_INS_BRS: brs */
 	0,
-	{ 0 }
+	{ CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapBranchExchange4, AArch64_INS_BX: bx */
@@ -7725,77 +7725,77 @@
 
 {	/* AArch64_CapBranchLink, AArch64_INS_BLR: blr */
 	0,
-	{ 0 }
+	{ CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapBranchLinkDirect, AArch64_INS_BLRS: blrs */
 	0,
-	{ 0 }
+	{ CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapBranchLinkRestricted, AArch64_INS_BLRR: blrr */
 	0,
-	{ 0 }
+	{ CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapBranchLinkSealed, AArch64_INS_BLRS: blrs */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapBranchRestricted, AArch64_INS_BRR: brr */
 	0,
-	{ 0 }
+	{ CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapBranchSealed, AArch64_INS_BRS: brs */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapBuildCap, AArch64_INS_BUILD: build */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapCheckEquals, AArch64_INS_CHKEQ: chkeq */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapCheckSealed, AArch64_INS_CHKSLD: chksld */
 	0,
-	{ 0 }
+	{ CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapCheckSubset, AArch64_INS_CHKSS: chkss */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapCheckSubsetUnseal, AArch64_INS_CHKSSU: chkssu */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapCheckTagged, AArch64_INS_CHKTGD: chktgd */
 	0,
-	{ 0 }
+	{ CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapClearPerm, AArch64_INS_CLRPERM: clrperm */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapClearPermImm, AArch64_INS_CLRPERM: clrperm */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapClearTag, AArch64_INS_CLRTAG: clrtag */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapCompareSwap, AArch64_INS_CAS: cas */
@@ -7820,472 +7820,472 @@
 
 {	/* AArch64_CapCondSel, AArch64_INS_CSEL: csel */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapConvert64ToCapDDC, AArch64_INS_CVTD: cvtd */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapConvert64ToCapDDCNullCheck, AArch64_INS_CVTDZ: cvtdz */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapConvert64ToCapPCC, AArch64_INS_CVTP: cvtp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapConvert64ToCapPCCNullCheck, AArch64_INS_CVTPZ: cvtpz */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapConvert64toCap, AArch64_INS_CVT: cvt */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapConvert64toCapNullCheck, AArch64_INS_CVTZ: cvtz */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapConvertCapTo64, AArch64_INS_CVT: cvt */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapConvertCapTo64DDC, AArch64_INS_CVTD: cvtd */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapConvertCapTo64PCC, AArch64_INS_CVTP: cvtp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapCopy, AArch64_INS_CPY: cpy */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapCopyFromHigh, AArch64_INS_CFHI: cfhi */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapCopyToHigh, AArch64_INS_CTHI: cthi */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapEorImm, AArch64_INS_EORFLGS: eorflgs */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapEorReg, AArch64_INS_EORFLGS: eorflgs */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapGetBase, AArch64_INS_GCBASE: gcbase */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapGetFlags, AArch64_INS_GCFLGS: gcflgs */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapGetLen, AArch64_INS_GCLEN: gclen */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapGetLimit, AArch64_INS_GCLIM: gclim */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapGetOffset, AArch64_INS_GCOFF: gcoff */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapGetPerm, AArch64_INS_GCPERM: gcperm */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapGetSeal, AArch64_INS_GCSEAL: gcseal */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapGetSys, AArch64_INS_MRS: mrs */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapGetTag, AArch64_INS_GCTAG: gctag */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapGetType, AArch64_INS_GCTYPE: gctype */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapGetValue, AArch64_INS_GCVALUE: gcvalue */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadAcq, AArch64_INS_LDAR: ldar */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadAcqPR, AArch64_INS_LDAPR: ldapr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadBranchIndirect, AArch64_INS_BR: br */
 	0,
-	{ 0 }
+	{ CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadBranchLinkIndirect, AArch64_INS_BLR: blr */
 	0,
-	{ 0 }
+	{ CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadEx, AArch64_INS_LDXR: ldxr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadExAcq, AArch64_INS_LDAXR: ldaxr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadExPair, AArch64_INS_LDXP: ldxp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadExPairAcq, AArch64_INS_LDAXP: ldaxp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadImmPost, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ | CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadImmPre, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ | CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadImmPreW, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ | CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadLiteral, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadPairBranch, AArch64_INS_LDPBR: ldpbr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadPairBranchLink, AArch64_INS_LDPBLR: ldpblr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadPairImmPost, AArch64_INS_LDP: ldp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE, CS_AC_READ | CS_AC_WRITE, CS_AC_READ }
 },
 
 {	/* AArch64_CapLoadPairImmPre, AArch64_INS_LDP: ldp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE, CS_AC_READ | CS_AC_WRITE, CS_AC_READ }
 },
 
 {	/* AArch64_CapLoadPairImmPreW, AArch64_INS_LDP: ldp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE, CS_AC_READ | CS_AC_WRITE, CS_AC_READ }
 },
 
 {	/* AArch64_CapLoadPairNonTemporal, AArch64_INS_LDNP: ldnp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_CapLoadRegExtW, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_CapLoadRegExtX, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_CapLoadTags, AArch64_INS_LDCT: ldct */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapLoadUnpriv, AArch64_INS_LDTR: ldtr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
-{	/* AArch64_CapLoadUnscaledImm, AArch64_INS_LDR: ldr */
+{	/* AArch64_CapLoadUnscaledImm, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapOrImm, AArch64_INS_ORRFLGS: orrflgs */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapOrrReg, AArch64_INS_ORRFLGS: orrflgs */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapReturn, AArch64_INS_RET: ret */
 	0,
-	{ 0 }
+	{ CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapReturnDirect, AArch64_INS_RETS: rets */
 	0,
-	{ 0 }
+	{ CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapReturnRestricted, AArch64_INS_RETR: retr */
 	0,
-	{ 0 }
+	{ CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapReturnSealed, AArch64_INS_RETS: rets */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapRoundRepresentableLength, AArch64_INS_RRLEN: rrlen */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapRoundRepresentableMask, AArch64_INS_RRMASK: rrmask */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSeal, AArch64_INS_SEAL: seal */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSealCond, AArch64_INS_CSEAL: cseal */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSealImm, AArch64_INS_SEAL: seal */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSetBounds, AArch64_INS_SCBNDS: scbnds */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSetBoundsExact, AArch64_INS_SCBNDSE: scbndse */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSetBoundsImm, AArch64_INS_SCBNDS: scbnds */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSetFlags, AArch64_INS_SCFLGS: scflgs */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSetOffset, AArch64_INS_SCOFF: scoff */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSetSys, AArch64_INS_MSR: msr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSetTagPriv, AArch64_INS_SCTAG: sctag */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSetValue, AArch64_INS_SCVALUE: scvalue */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSetValueFromType, AArch64_INS_CPYTYPE: cpytype */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSetValueFromValue, AArch64_INS_CPYVALUE: cpyvalue */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapStoreEx, AArch64_INS_STXR: stxr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapStoreExPair, AArch64_INS_STXP: stxp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_CapStoreExPairRel, AArch64_INS_STLXP: stlxp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_CapStoreExRel, AArch64_INS_STLXR: stlxr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapStoreImmPost, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ | CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapStoreImmPre, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ | CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapStoreImmPreW, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ | CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapStorePairImmPost, AArch64_INS_STP: stp */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ | CS_AC_WRITE, CS_AC_READ }
 },
 
 {	/* AArch64_CapStorePairImmPre, AArch64_INS_STP: stp */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ | CS_AC_WRITE, CS_AC_READ }
 },
 
 {	/* AArch64_CapStorePairImmPreW, AArch64_INS_STP: stp */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ | CS_AC_WRITE, CS_AC_READ }
 },
 
 {	/* AArch64_CapStorePairNonTemporal, AArch64_INS_STNP: stnp */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_CapStoreRegExtW, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_CapStoreRegExtX, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_CapStoreRel, AArch64_INS_STLR: stlr */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapStoreTagsPriv, AArch64_INS_STCT: stct */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapStoreUnpriv, AArch64_INS_STTR: sttr */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
-{	/* AArch64_CapStoreUnscaledImm, AArch64_INS_STR: str */
+{	/* AArch64_CapStoreUnscaledImm, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSubImm, AArch64_INS_SUB: sub */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_CapSubSetFlags, AArch64_INS_CMP: cmp */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSwap, AArch64_INS_SWP: swp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSwapAcq, AArch64_INS_SWPA: swpa */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSwapAcqRel, AArch64_INS_SWPAL: swpal */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapSwapRel, AArch64_INS_SWPL: swpl */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_CapUnseal, AArch64_INS_UNSEAL: unseal */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_DCPS1, AArch64_INS_DCPS1: dcps1 */
@@ -16954,7 +16954,7 @@
 },
 
 {	/* AArch64_LDRDroW, AArch64_INS_LDR: ldr */
-	00,
+	0,
 	{ CS_AC_WRITE, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
@@ -18975,12 +18975,12 @@
 
 {	/* AArch64_PADRDP, AArch64_INS_ADRDP: adrdp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, 0 }
 },
 
 {	/* AArch64_PADRP, AArch64_INS_ADRP: adrp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, 0 }
 },
 
 {	/* AArch64_PAltCapLoadAcq, AArch64_INS_LDAR: ldar */
@@ -19003,7 +19003,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadByteImmUnscaled, AArch64_INS_LDRB: ldrb */
+{	/* AArch64_PAltLoadByteImmUnscaled, AArch64_INS_LDURB: ldurb */
 	0,
 	{ 0 }
 },
@@ -19033,7 +19033,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadCapabilityImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_PAltLoadCapabilityImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
@@ -19053,7 +19053,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadDWordImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_PAltLoadDWordImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
@@ -19068,32 +19068,32 @@
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadFPByteImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_PAltLoadFPByteImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadFPDoubleImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_PAltLoadFPDoubleImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadFPHalfImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_PAltLoadFPHalfImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadFPQuadImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_PAltLoadFPQuadImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadFPSingleImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_PAltLoadFPSingleImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadHalfImmUnscaled, AArch64_INS_LDRH: ldrh */
+{	/* AArch64_PAltLoadHalfImmUnscaled, AArch64_INS_LDURH: ldurh */
 	0,
 	{ 0 }
 },
@@ -19148,22 +19148,22 @@
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadSignedByteToDWordImmUnscaled, AArch64_INS_LDRSB: ldrsb */
+{	/* AArch64_PAltLoadSignedByteToDWordImmUnscaled, AArch64_INS_LDURSB: ldursb */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadSignedByteToWordImmUnscaled, AArch64_INS_LDRSB: ldrsb */
+{	/* AArch64_PAltLoadSignedByteToWordImmUnscaled, AArch64_INS_LDURSB: ldursb */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadSignedHalfToDWordImmUnscaled, AArch64_INS_LDRSH: ldrsh */
+{	/* AArch64_PAltLoadSignedHalfToDWordImmUnscaled, AArch64_INS_LDURSH: ldursh */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadSignedHalfToWordImmUnscaled, AArch64_INS_LDRSH: ldrsh */
+{	/* AArch64_PAltLoadSignedHalfToWordImmUnscaled, AArch64_INS_LDURSH: ldursh */
 	0,
 	{ 0 }
 },
@@ -19188,7 +19188,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadSignedWordToDWordImmUnscaled, AArch64_INS_LDRSW: ldrsw */
+{	/* AArch64_PAltLoadSignedWordToDWordImmUnscaled, AArch64_INS_LDURSW: ldursw */
 	0,
 	{ 0 }
 },
@@ -19203,7 +19203,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_PAltLoadWordImmUnscaled, AArch64_INS_LDR: ldr */
+{	/* AArch64_PAltLoadWordImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
@@ -19213,7 +19213,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_PAltStoreByteImmUnscaled, AArch64_INS_STRB: strb */
+{	/* AArch64_PAltStoreByteImmUnscaled, AArch64_INS_STURB: sturb */
 	0,
 	{ 0 }
 },
@@ -19248,7 +19248,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_PAltStoreCapabilityImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_PAltStoreCapabilityImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
@@ -19268,7 +19268,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_PAltStoreDWordImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_PAltStoreDWordImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
@@ -19283,32 +19283,32 @@
 	{ 0 }
 },
 
-{	/* AArch64_PAltStoreFPByteImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_PAltStoreFPByteImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_PAltStoreFPDoubleImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_PAltStoreFPDoubleImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_PAltStoreFPHalfImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_PAltStoreFPHalfImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_PAltStoreFPQuadImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_PAltStoreFPQuadImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_PAltStoreFPSingleImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_PAltStoreFPSingleImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_PAltStoreHalfImmUnscaled, AArch64_INS_STRH: strh */
+{	/* AArch64_PAltStoreHalfImmUnscaled, AArch64_INS_STURH: sturh */
 	0,
 	{ 0 }
 },
@@ -19348,7 +19348,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_PAltStoreWordImmUnscaled, AArch64_INS_STR: str */
+{	/* AArch64_PAltStoreWordImmUnscaled, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
@@ -19463,7 +19463,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_PCapLoadUnscaledImm, AArch64_INS_LDR: ldr */
+{	/* AArch64_PCapLoadUnscaledImm, AArch64_INS_LDUR: ldur */
 	0,
 	{ 0 }
 },
@@ -19505,17 +19505,17 @@
 
 {	/* AArch64_PCapStorePairImmPost, AArch64_INS_STP: stp */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PCapStorePairImmPre, AArch64_INS_STP: stp */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PCapStorePairImmPreW, AArch64_INS_STP: stp */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PCapStorePairNonTemporal, AArch64_INS_STNP: stnp */
@@ -19548,7 +19548,7 @@
 	{ 0 }
 },
 
-{	/* AArch64_PCapStoreUnscaledImm, AArch64_INS_STR: str */
+{	/* AArch64_PCapStoreUnscaledImm, AArch64_INS_STUR: stur */
 	0,
 	{ 0 }
 },
