@@ -3,12 +3,12 @@
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013-2019 */
 
 
-{	/* AArch64_RDFFR_P,        AArch64_INS_RDFFR: rdffr */
+{	/* AArch64_RDFFR_P, AArch64_INS_RDFFR: rdffr */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_RDFFR_PPz,        AArch64_INS_RDFFR: rdffr */
+{	/* AArch64_RDFFR_PPz, AArch64_INS_RDFFR: rdffr */
 	0,
 	{ 0 }
 },
@@ -4670,377 +4670,377 @@
 
 {	/* AArch64_AltCapLoadAcq, AArch64_INS_LDAR: ldar */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltCapStoreRel, AArch64_INS_STLR: stlr */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadByteAcq, AArch64_INS_LDARB: ldarb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadByteImmPre, AArch64_INS_LDRB: ldrb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadByteImmUnscaled, AArch64_INS_LDURB: ldurb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadByteRegExtW, AArch64_INS_LDRB: ldrb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadByteRegExtX, AArch64_INS_LDRB: ldrb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadCapImmPre, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadCapRegExtW, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadCapRegExtX, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadCapabilityImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadDFPRegExtW, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadDFPRegExtX, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadDWordImmPre, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadDWordImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadDWordRegExtW, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadDWordRegExtX, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadFPByteImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadFPDoubleImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadFPHalfImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadFPQuadImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadFPSingleImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadHalfImmUnscaled, AArch64_INS_LDURH: ldurh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadHalfwordRegExtW, AArch64_INS_LDRH: ldrh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadHalfwordRegExtX, AArch64_INS_LDRH: ldrh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadSFPRegExtW, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadSFPRegExtX, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadSWordRegExtW, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadSWordRegExtX, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadSignedByteDRegExtW, AArch64_INS_LDRSB: ldrsb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadSignedByteDRegExtX, AArch64_INS_LDRSB: ldrsb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadSignedByteSRegExtW, AArch64_INS_LDRSB: ldrsb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadSignedByteSRegExtX, AArch64_INS_LDRSB: ldrsb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadSignedByteToDWordImmUnscaled, AArch64_INS_LDURSB: ldursb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadSignedByteToWordImmUnscaled, AArch64_INS_LDURSB: ldursb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadSignedHalfToDWordImmUnscaled, AArch64_INS_LDURSH: ldursh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadSignedHalfToWordImmUnscaled, AArch64_INS_LDURSH: ldursh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadSignedHalfwordDRegExtW, AArch64_INS_LDRSH: ldrsh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadSignedHalfwordDRegExtX, AArch64_INS_LDRSH: ldrsh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadSignedHalfwordSRegExtW, AArch64_INS_LDRSH: ldrsh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadSignedHalfwordSRegExtX, AArch64_INS_LDRSH: ldrsh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltLoadSignedWordToDWordImmUnscaled, AArch64_INS_LDURSW: ldursw */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadWordAcq, AArch64_INS_LDAR: ldar */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadWordImmPre, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltLoadWordImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreByteImmPre, AArch64_INS_STRB: strb */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreByteImmUnscaled, AArch64_INS_STURB: sturb */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreByteRegExtW, AArch64_INS_STRB: strb */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltStoreByteRegExtX, AArch64_INS_STRB: strb */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltStoreByteRel, AArch64_INS_STLRB: stlrb */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreCapImmPre, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreCapRegExtW, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltStoreCapRegExtX, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltStoreCapabilityImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreDFPRegExtW, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltStoreDFPRegExtX, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltStoreDWordImmPre, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreDWordImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreDWordRegExtW, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltStoreDWordRegExtX, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltStoreFPByteImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreFPDoubleImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreFPHalfImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreFPQuadImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreFPSingleImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreHalfImmUnscaled, AArch64_INS_STURH: sturh */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreHalfwordRegExtW, AArch64_INS_STRH: strh */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltStoreHalfwordRegExtX, AArch64_INS_STRH: strh */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltStoreSFPRegExtW, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltStoreSFPRegExtX, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltStoreSWordRegExtW, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltStoreSWordRegExtX, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_AltStoreWordImmPre, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreWordImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_AltStoreWordRel, AArch64_INS_STLR: stlr */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_B, AArch64_INS_B: b */
@@ -18985,377 +18985,377 @@
 
 {	/* AArch64_PAltCapLoadAcq, AArch64_INS_LDAR: ldar */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltCapStoreRel, AArch64_INS_STLR: stlr */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadByteAcq, AArch64_INS_LDARB: ldarb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadByteImmPre, AArch64_INS_LDRB: ldrb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadByteImmUnscaled, AArch64_INS_LDURB: ldurb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadByteRegExtW, AArch64_INS_LDRB: ldrb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadByteRegExtX, AArch64_INS_LDRB: ldrb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadCapImmPre, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadCapRegExtW, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadCapRegExtX, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadCapabilityImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadDFPRegExtW, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadDFPRegExtX, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadDWordImmPre, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadDWordImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadDWordRegExtW, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadDWordRegExtX, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadFPByteImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadFPDoubleImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadFPHalfImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadFPQuadImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadFPSingleImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadHalfImmUnscaled, AArch64_INS_LDURH: ldurh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadHalfwordRegExtW, AArch64_INS_LDRH: ldrh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadHalfwordRegExtX, AArch64_INS_LDRH: ldrh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadSFPRegExtW, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadSFPRegExtX, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadSWordRegExtW, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadSWordRegExtX, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadSignedByteDRegExtW, AArch64_INS_LDRSB: ldrsb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadSignedByteDRegExtX, AArch64_INS_LDRSB: ldrsb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadSignedByteSRegExtW, AArch64_INS_LDRSB: ldrsb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadSignedByteSRegExtX, AArch64_INS_LDRSB: ldrsb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadSignedByteToDWordImmUnscaled, AArch64_INS_LDURSB: ldursb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadSignedByteToWordImmUnscaled, AArch64_INS_LDURSB: ldursb */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadSignedHalfToDWordImmUnscaled, AArch64_INS_LDURSH: ldursh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadSignedHalfToWordImmUnscaled, AArch64_INS_LDURSH: ldursh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadSignedHalfwordDRegExtW, AArch64_INS_LDRSH: ldrsh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadSignedHalfwordDRegExtX, AArch64_INS_LDRSH: ldrsh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadSignedHalfwordSRegExtW, AArch64_INS_LDRSH: ldrsh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadSignedHalfwordSRegExtX, AArch64_INS_LDRSH: ldrsh */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltLoadSignedWordToDWordImmUnscaled, AArch64_INS_LDURSW: ldursw */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadWordAcq, AArch64_INS_LDAR: ldar */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadWordImmPre, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltLoadWordImmUnscaled, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreByteImmPre, AArch64_INS_STRB: strb */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreByteImmUnscaled, AArch64_INS_STURB: sturb */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreByteRegExtW, AArch64_INS_STRB: strb */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltStoreByteRegExtX, AArch64_INS_STRB: strb */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltStoreByteRel, AArch64_INS_STLRB: stlrb */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreCapImmPre, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreCapRegExtW, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltStoreCapRegExtX, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltStoreCapabilityImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreDFPRegExtW, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltStoreDFPRegExtX, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltStoreDWordImmPre, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreDWordImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreDWordRegExtW, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltStoreDWordRegExtX, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltStoreFPByteImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreFPDoubleImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreFPHalfImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreFPQuadImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreFPSingleImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreHalfImmUnscaled, AArch64_INS_STURH: sturh */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreHalfwordRegExtW, AArch64_INS_STRH: strh */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltStoreHalfwordRegExtX, AArch64_INS_STRH: strh */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltStoreSFPRegExtW, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltStoreSFPRegExtX, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltStoreSWordRegExtW, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltStoreSWordRegExtX, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PAltStoreWordImmPre, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreWordImmUnscaled, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltStoreWordRel, AArch64_INS_STLR: stlr */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapCompareSwap, AArch64_INS_CAS: cas */
