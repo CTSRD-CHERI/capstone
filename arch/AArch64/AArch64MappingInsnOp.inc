@@ -3,12 +3,12 @@
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013-2019 */
 
 
-{	/* AArch64_RDFFR_P,       AArch64_INS_RDFFR: rdffr */
+{	/* AArch64_RDFFR_P,        AArch64_INS_RDFFR: rdffr */
 	0,
 	{ 0 }
 },
 
-{	/* AArch64_RDFFR_PPz,       AArch64_INS_RDFFR: rdffr */
+{	/* AArch64_RDFFR_PPz,        AArch64_INS_RDFFR: rdffr */
 	0,
 	{ 0 }
 },
@@ -18980,7 +18980,7 @@
 
 {	/* AArch64_PADRP, AArch64_INS_ADRP: adrp */
 	0,
-	{ CS_AC_WRITE, 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PAltCapLoadAcq, AArch64_INS_LDAR: ldar */
@@ -19380,197 +19380,197 @@
 
 {	/* AArch64_PCapLoadAcq, AArch64_INS_LDAR: ldar */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapLoadAcqPR, AArch64_INS_LDAPR: ldapr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapLoadEx, AArch64_INS_LDXR: ldxr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapLoadExAcq, AArch64_INS_LDAXR: ldaxr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapLoadExPair, AArch64_INS_LDXP: ldxp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapLoadExPairAcq, AArch64_INS_LDAXP: ldaxp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapLoadImmPost, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ | CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapLoadImmPre, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ | CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapLoadImmPreW, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ | CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapLoadPairImmPost, AArch64_INS_LDP: ldp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE, CS_AC_READ | CS_AC_WRITE, CS_AC_READ }
 },
 
 {	/* AArch64_PCapLoadPairImmPre, AArch64_INS_LDP: ldp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE, CS_AC_READ | CS_AC_WRITE, CS_AC_READ }
 },
 
 {	/* AArch64_PCapLoadPairImmPreW, AArch64_INS_LDP: ldp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE, CS_AC_READ | CS_AC_WRITE, CS_AC_READ }
 },
 
 {	/* AArch64_PCapLoadPairNonTemporal, AArch64_INS_LDNP: ldnp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_WRITE, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PCapLoadRegExtW, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PCapLoadRegExtX, AArch64_INS_LDR: ldr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PCapLoadTags, AArch64_INS_LDCT: ldct */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapLoadUnpriv, AArch64_INS_LDTR: ldtr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapLoadUnscaledImm, AArch64_INS_LDUR: ldur */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapStoreEx, AArch64_INS_STXR: stxr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapStoreExPair, AArch64_INS_STXP: stxp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PCapStoreExPairRel, AArch64_INS_STLXP: stlxp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PCapStoreExRel, AArch64_INS_STLXR: stlxr */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapStoreImmPost, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ | CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapStoreImmPre, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ | CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapStoreImmPreW, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ | CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapStorePairImmPost, AArch64_INS_STP: stp */
 	0,
-	{ CS_AC_READ, CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ | CS_AC_WRITE, CS_AC_READ }
 },
 
 {	/* AArch64_PCapStorePairImmPre, AArch64_INS_STP: stp */
 	0,
-	{ CS_AC_READ, CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ | CS_AC_WRITE, CS_AC_READ }
 },
 
 {	/* AArch64_PCapStorePairImmPreW, AArch64_INS_STP: stp */
 	0,
-	{ CS_AC_READ, CS_AC_READ, CS_AC_WRITE | CS_AC_READ, CS_AC_READ }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ | CS_AC_WRITE, CS_AC_READ }
 },
 
 {	/* AArch64_PCapStorePairNonTemporal, AArch64_INS_STNP: stnp */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PCapStoreRegExtW, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PCapStoreRegExtX, AArch64_INS_STR: str */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, CS_AC_READ }
 },
 
 {	/* AArch64_PCapStoreRel, AArch64_INS_STLR: stlr */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapStoreTagsPriv, AArch64_INS_STCT: stct */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapStoreUnpriv, AArch64_INS_STTR: sttr */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapStoreUnscaledImm, AArch64_INS_STUR: stur */
 	0,
-	{ 0 }
+	{ CS_AC_READ, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapSwap, AArch64_INS_SWP: swp */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapSwapAcq, AArch64_INS_SWPA: swpa */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapSwapAcqRel, AArch64_INS_SWPAL: swpal */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PCapSwapRel, AArch64_INS_SWPL: swpl */
 	0,
-	{ 0 }
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PFALSE, AArch64_INS_PFALSE: pfalse */
@@ -19640,12 +19640,12 @@
 
 {	/* AArch64_PMULv16i8, AArch64_INS_PMUL: pmul */
 	0,
-	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0}
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PMULv8i8, AArch64_INS_PMUL: pmul */
 	0,
-	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0}
+	{ CS_AC_WRITE, CS_AC_READ, CS_AC_READ, 0 }
 },
 
 {	/* AArch64_PNEXT_B, AArch64_INS_PNEXT: pnext */
