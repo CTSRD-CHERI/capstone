@@ -11015,7 +11015,7 @@
 },
 
 {
-	AArch64_CapCopy, ARM64_INS_CPY,
+	AArch64_CapCopy, ARM64_INS_MOV,
 #ifndef CAPSTONE_DIET
 	{ 0 }, { 0 }, { 0 }, 0, 0
 #endif

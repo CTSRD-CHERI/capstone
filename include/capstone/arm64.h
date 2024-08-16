@@ -2000,7 +2000,6 @@ typedef enum arm64_insn {
   ARM64_INS_CMLS,
   ARM64_INS_CMLT,
   ARM64_INS_CMN,
-  ARM64_INS_CMP,
   ARM64_INS_CMPEQ,
   ARM64_INS_CMPGE,
   ARM64_INS_CMPGT,
@@ -2542,7 +2541,6 @@ typedef enum arm64_insn {
   ARM64_INS_MLA,
   ARM64_INS_MLS,
   ARM64_INS_MNEG,
-  ARM64_INS_MOV,
   ARM64_INS_MOVA,
   ARM64_INS_MOVI,
   ARM64_INS_MOVK,
@@ -3193,6 +3191,8 @@ typedef enum arm64_insn {
   ARM64_INS_DC,
   ARM64_INS_AT,
   ARM64_INS_TLBI,
+  ARM64_INS_MOV,
+  ARM64_INS_CMP,
 
   ARM64_INS_ENDING, // <-- mark the end of the list of insn
 } arm64_insn;

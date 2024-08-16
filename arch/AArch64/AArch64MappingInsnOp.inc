@@ -7868,7 +7868,7 @@
 	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
 
-{	/* AArch64_CapCopy, AArch64_INS_CPY: cpy */
+{	/* AArch64_CapCopy, AArch64_INS_MOV: mov */
 	0,
 	{ CS_AC_WRITE, CS_AC_READ, 0 }
 },
